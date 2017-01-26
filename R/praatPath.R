@@ -1,3 +1,5 @@
+pkg.env <- new.env(parent = emptyenv())
+
 #' Get path to Praat.
 #'
 #' The function returns the path to the Praat executable depeding on the
@@ -16,23 +18,28 @@ praatPath <- function() {
     }
 }
 
+pkg.env$praat.path <- "./"
+
 #' Set path to Praat
 #'
 #' It assigns the default path to Praat or the user assigned path (when
-#'     \code{default.path = FALSE} (the default).
+#'     \code{default.path = FALSE}, which is the default).
 #'
 #' @param path Path to Praat.
-#' @param default.path Boolean (default = FALSE).
+#' @param default.path Boolean (\code{FALSE}).
 setPraatPath <- function(path, default.path = FALSE) {
     if (default.path == FALSE) {
-        praat.path <- path
+        pkg.env$praat.path <- path
     }else{
-        praat.path <- praatPath()
+        pkg.env$praat.path <- praatPath()
     }
 }
 
 setPraatPath(default.path = TRUE)
 
+#' Print path to Praat
+#'
+#' It prints the path to Praat on the console for inspection.
 getPraatPath <- function() {
-    return(praat.path)
+    return(pkg.env$praat.path)
 }
