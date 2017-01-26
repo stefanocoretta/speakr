@@ -37,7 +37,7 @@ setPraatPath <- function(path, default.path = FALSE) {
 
 setPraatPath(default.path = TRUE)
 
-#' Print path to Praat
+#' Print path to Praat.
 #'
 #' It prints the path to Praat on the console for inspection.
 getPraatPath <- function() {
