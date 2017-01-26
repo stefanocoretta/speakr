@@ -2,7 +2,7 @@
 % Please edit documentation in R/praatPath.R
 \name{getPraatPath}
 \alias{getPraatPath}
-\title{Print path to Praat}
+\title{Print path to Praat.}
 \usage{
 getPraatPath()
 }
