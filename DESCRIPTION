@@ -1,6 +1,6 @@
 Package: speakr
 Type: Package
-Title: A wrapper for the Phonetic Software Praat
+Title: A Wrapper for the Phonetic Software Praat
 Version: 0.1.0
 Authors@R: person("Stefano", "Coretta", , "stefano.coretta@gmail.com", role = c("aut", "cre"))
 Description: It allows running Praat scripts from R and it provides some
