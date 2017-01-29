@@ -7,7 +7,7 @@
 praatPath()
 }
 \value{
-The path to Praat.
+the path to Praat executable.
 }
 \description{
 The function returns the path to the Praat executable depeding on the

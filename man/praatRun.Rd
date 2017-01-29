@@ -7,9 +7,9 @@
 praatRun(script, ...)
 }
 \arguments{
-\item{script}{Name (or path) of the script.}
+\item{script}{caracter vector containing the script name.}
 
-\item{...}{List of arguments.}
+\item{...}{list of arguments of the script to be run.}
 }
 \description{
 It runs a file containing Praat scripting, with optional arguments.

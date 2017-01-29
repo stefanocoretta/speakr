@@ -5,7 +5,7 @@ pkg.env <- new.env(parent = emptyenv())
 #' The function returns the path to the Praat executable depeding on the
 #'     system.
 #'
-#' @return The path to Praat.
+#' @return the path to Praat executable.
 praatPath <- function() {
     sysname <- Sys.info()['sysname']
 
@@ -25,8 +25,8 @@ pkg.env$praat.path <- "./"
 #' It assigns the default path to Praat or the user assigned path (when
 #'     \code{default.path = FALSE}, which is the default).
 #'
-#' @param path Path to Praat.
-#' @param default.path Boolean (\code{FALSE}).
+#' @param path path to Praat executable.
+#' @param default.path if \code{TRUE}, the path is set to what \code{praatPath} returns.
 setPraatPath <- function(path, default.path = FALSE) {
     if (default.path == FALSE) {
         pkg.env$praat.path <- path

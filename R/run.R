@@ -2,8 +2,8 @@
 #'
 #' It runs a file containing Praat scripting, with optional arguments.
 #'
-#' @param script Name (or path) of the script.
-#' @param ... List of arguments.
+#' @param script caracter vector containing the script name.
+#' @param ... list of arguments of the script to be run.
 praatRun <- function(script, ...) {
     system2(pkg.env$praat.path, c("--run", c(script, list(...))))
 }
