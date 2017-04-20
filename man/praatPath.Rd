@@ -13,4 +13,3 @@ the path to Praat executable.
 The function returns the path to the Praat executable depeding on the
     system.
 }
-

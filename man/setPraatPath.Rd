@@ -15,4 +15,3 @@ setPraatPath(path, default.path = FALSE)
 It assigns the default path to Praat or the user assigned path (when
     \code{default.path = FALSE}, which is the default).
 }
-

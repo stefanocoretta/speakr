@@ -14,4 +14,3 @@ praatRun(script, ...)
 \description{
 It runs a file containing Praat scripting, with optional arguments.
 }
-

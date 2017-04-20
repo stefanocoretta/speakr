@@ -16,4 +16,3 @@ It tangles the code from a literate markdown file. If \code{cache} is set to
     \code{TRUE}, the function does nothing (useful if tangling is not needed
     every time the file is knitted.)
 }
-

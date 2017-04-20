@@ -9,4 +9,3 @@ getPraatPath()
 \description{
 It prints the path to Praat on the console for inspection.
 }
-

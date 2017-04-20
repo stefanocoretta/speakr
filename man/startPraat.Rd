@@ -9,4 +9,3 @@ startPraat()
 \description{
 It starts the GUI of Praat.
 }
-

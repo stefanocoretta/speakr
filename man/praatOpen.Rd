@@ -12,4 +12,3 @@ praatOpen(...)
 \description{
 It opens a file or list of files.
 }
-
