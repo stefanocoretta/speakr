@@ -4,12 +4,12 @@
 \alias{lmt}
 \title{Literate markdown tangler.}
 \usage{
-lmt(..., cache = FALSE)
+lmt(file, cache = FALSE)
 }
 \arguments{
-\item{...}{List of file names.}
-
 \item{cache}{Boolean (\code{FALSE})}
+
+\item{...}{List of file names.}
 }
 \description{
 It tangles the code from a literate markdown file. If \code{cache} is set to

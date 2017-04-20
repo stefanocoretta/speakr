@@ -15,8 +15,13 @@ praatRun <- function(script, ...) {
 #'
 #' @param ... List of file names.
 #' @param cache Boolean (\code{FALSE})
-lmt <- function(..., cache = FALSE) {
+lmt <- function(file, cache = FALSE) {
     if (cache == FALSE) {
-    system2("lmt", list(...))
+        file.dir <- normalizePath(dirname(file))
+        base.file <- basename(file)
+        current.wd <- getwd()
+        setwd(file.dir)
+        system2("/Users/Stefano/work/bin/lmt", base.file)
+        setwd(current.wd)
     }
 }
