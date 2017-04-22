@@ -1,5 +1,3 @@
-pkg.env <- new.env(parent = emptyenv())
-
 #' Get path to Praat.
 #'
 #' The function returns the path to the Praat executable depeding on the
@@ -16,30 +14,4 @@ praatPath <- function() {
     }else if (sysname == "Windows") {
         return(normalizePath("C:/Program Files/Praat.exe"))
     }
-}
-
-pkg.env$praat.path <- "./"
-
-#' Set path to Praat
-#'
-#' It assigns the default path to Praat or the user assigned path (when
-#'     \code{default.path = FALSE}, which is the default).
-#'
-#' @param path path to Praat executable.
-#' @param default.path if \code{TRUE}, the path is set to what \code{praatPath} returns.
-setPraatPath <- function(path, default.path = FALSE) {
-    if (default.path == FALSE) {
-        pkg.env$praat.path <- path
-    }else{
-        pkg.env$praat.path <- praatPath()
-    }
-}
-
-setPraatPath(default.path = TRUE)
-
-#' Print path to Praat.
-#'
-#' It prints the path to Praat on the console for inspection.
-getPraatPath <- function() {
-    return(pkg.env$praat.path)
 }
