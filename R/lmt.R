@@ -6,6 +6,7 @@
 #'
 #' @param file File name.
 #' @param cache Boolean (\code{FALSE})
+#' @export
 lmt <- function(file, cache = FALSE) {
     if (cache == FALSE) {
         file.dir <- normalizePath(dirname(file))

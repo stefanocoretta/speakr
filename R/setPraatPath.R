@@ -5,6 +5,7 @@
 #'
 #' @param path path to Praat executable.
 #' @param default.path if \code{TRUE}, the path is set to what \code{praatPath} returns.
+#' @export
 setPraatPath <- function(path, default.path = FALSE) {
     if (default.path == FALSE) {
         pkg.env$praat.path <- path

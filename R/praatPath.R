@@ -4,6 +4,7 @@
 #'     system.
 #'
 #' @return the path to Praat executable.
+#' @export
 praatPath <- function() {
     sysname <- Sys.info()['sysname']
 
