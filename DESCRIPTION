@@ -7,7 +7,7 @@ Authors@R: person("Stefano", "Coretta", email = "stefano.coretta@gmail.com",
 Description: It allows running Praat scripts from R and it provides some
     wrappers for basic plotting. It also adds support for literate markdown
     tangling. The package is designed to bring reproducible phonetic research
-    to R.
+    into R.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
