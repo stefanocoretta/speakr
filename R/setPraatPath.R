@@ -3,8 +3,9 @@
 #' It assigns the default path to Praat or the user assigned path (when
 #'     \code{default.path = FALSE}, which is the default).
 #'
-#' @param path path to Praat executable.
-#' @param default.path if \code{TRUE}, the path is set to what \code{praatPath} returns.
+#' @param path The path to the Praat executable.
+#' @param default.path If \code{TRUE}, the path is set to what \code{praatPath}
+#' returns.
 #' @export
 setPraatPath <- function(path, default.path = FALSE) {
     if (default.path == FALSE) {

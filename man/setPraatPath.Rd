@@ -7,9 +7,10 @@
 setPraatPath(path, default.path = FALSE)
 }
 \arguments{
-\item{path}{path to Praat executable.}
+\item{path}{The path to the Praat executable.}
 
-\item{default.path}{if \code{TRUE}, the path is set to what \code{praatPath} returns.}
+\item{default.path}{If \code{TRUE}, the path is set to what \code{praatPath}
+returns.}
 }
 \description{
 It assigns the default path to Praat or the user assigned path (when

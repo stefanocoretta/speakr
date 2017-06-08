@@ -4,12 +4,16 @@
 \alias{praatRun}
 \title{Run a Praat script.}
 \usage{
-praatRun(script, ...)
+praatRun(script, ..., capture = FALSE)
 }
 \arguments{
-\item{script}{caracter vector containing the script name.}
+\item{script}{A character vector containing the script name.}
 
-\item{...}{list of arguments of the script to be run.}
+\item{...}{List of arguments to be passed to the script.}
+
+\item{capture}{If set to \code{TRUE}, the standard output of the script can be
+captured into a variable. This is useful if the script uses the "write to Info"
+commands.}
 }
 \description{
 It runs a file containing Praat scripting, with optional arguments.

@@ -7,9 +7,10 @@
 lmt(file, cache = FALSE)
 }
 \arguments{
-\item{file}{File name.}
+\item{file}{The name of the file to tangle.}
 
-\item{cache}{Boolean (\code{FALSE})}
+\item{cache}{If set to \code{TRUE}, when the command is run, tangling is not
+performed (the default is \code{FALSE}).}
 }
 \description{
 It tangles the code from a literate markdown file. If \code{cache} is set to

@@ -3,7 +3,7 @@
 #' The function returns the path to the Praat executable depeding on the
 #'     system.
 #'
-#' @return the path to Praat executable.
+#' @return The path to the Praat executable.
 #' @export
 praatPath <- function() {
     sysname <- Sys.info()['sysname']

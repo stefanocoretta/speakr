@@ -4,8 +4,9 @@
 #'     \code{TRUE}, the function does nothing (useful if tangling is not needed
 #'     every time the file is knitted.)
 #'
-#' @param file File name.
-#' @param cache Boolean (\code{FALSE})
+#' @param file The name of the file to tangle.
+#' @param cache If set to \code{TRUE}, when the command is run, tangling is not
+#' performed (the default is \code{FALSE}).
 #' @export
 lmt <- function(file, cache = FALSE) {
     if (cache == FALSE) {

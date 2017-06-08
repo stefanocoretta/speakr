@@ -4,7 +4,7 @@
 #'
 #' @param script A character vector containing the script name.
 #' @param ... List of arguments to be passed to the script.
-#' @param capture If set to `TRUE`, the standard output of the script can be
+#' @param capture If set to \code{TRUE}, the standard output of the script can be
 #' captured into a variable. This is useful if the script uses the "write to Info"
 #' commands.
 #' @export
