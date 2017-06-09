@@ -14,7 +14,7 @@ lmt <- function(file, cache = FALSE) {
         base.file <- basename(file)
         current.wd <- getwd()
         setwd(file.dir)
-        system2("/Users/Stefano/work/bin/lmt", base.file)
+        system2(pkg.env$lmt.path, base.file)
         setwd(current.wd)
     }
 }
