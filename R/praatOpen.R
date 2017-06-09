@@ -5,5 +5,5 @@
 #' @param ... A list of strings.
 #' @export
 praatOpen <- function(...) {
-    system2(pkg.env$praat.path, c("--open", list(...)))
+    system2(pkg.env$praat.path, c("--open", list(...)), wait = FALSE)
 }
