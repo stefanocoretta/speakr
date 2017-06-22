@@ -4,6 +4,6 @@
 #'
 #' @param ... A list of strings.
 #' @export
-praatOpen <- function(...) {
+praat_open <- function(...) {
     system2(pkg.env$praat.path, c("--open", list(...)), wait = FALSE)
 }

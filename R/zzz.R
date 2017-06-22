@@ -1,3 +1,3 @@
 .onLoad <- function(libname, pkgname) {
-    setPraatPath(default.path = TRUE)
+    set_praat_path(default.path = TRUE)
 }

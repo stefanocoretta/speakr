@@ -4,6 +4,6 @@
 #'
 #' @param path The path to the lmt executable.
 #' @export
-setlmtPath <- function(path) {
+set_lmt_path <- function(path) {
     pkg.env$lmt.path <- path
 }

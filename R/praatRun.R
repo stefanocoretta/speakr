@@ -8,7 +8,7 @@
 #' captured into a variable. This is useful if the script uses the "write to Info"
 #' commands.
 #' @export
-praatRun <- function(script, ..., capture = FALSE) {
+praat_run <- function(script, ..., capture = FALSE) {
     if (capture == FALSE) {
         system2(pkg.env$praat.path, c("--run", c(script, list(...))))
     } else {

@@ -2,6 +2,6 @@
 #'
 #' It starts the GUI of Praat.
 #' @export
-startPraat <- function() {
+start_praat <- function() {
     system2(pkg.env$praat.path, wait = FALSE)
 }

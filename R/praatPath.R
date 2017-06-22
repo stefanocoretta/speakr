@@ -1,11 +1,11 @@
-#' Get path to Praat.
+#' Get system path to Praat.
 #'
 #' The function returns the path to the Praat executable depeding on the
 #'     system.
 #'
 #' @return The path to the Praat executable.
 #' @export
-praatPath <- function() {
+praat_path <- function() {
     sysname <- Sys.info()['sysname']
 
     if (sysname == "Darwin") {
