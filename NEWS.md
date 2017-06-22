@@ -3,7 +3,6 @@
 ## Unreleased
 ### Added
 - `set_lmt_path()`
-- `lmt` in the package environment
 
 ### Changed
 - path in `lmt()`
