@@ -24,14 +24,14 @@ The function `praatRun()` can be used to run a Praat script. If the script outpu
 
 ```{r run}
 # system.file() is needed here because the example files reside in the package.
-# You can just include the file path directly in praatRun(), like 
-# praatRun("~/Desktop/script.praat")
+# You can just include the file path directly in praat_run(), like 
+# praat_run("~/Desktop/script.praat")
 script <- system.file("extdata", "get-formants.praat", package = "speakr")
 
-formants <- praatRun(script, "Hertz", 0.03, capture = TRUE) %>%
+formants <- praat_run(script, "Hertz", 0.03, capture = TRUE) %>%
     read_csv()
 
 formants
 ```
 
-The `praatRun()` function supports a list of optional argument to be passed to the script, if the script requires them for a form. In the call you see above, two arguments were specified: `Hertz` and `0.03`, which are passed to the form in the script. If you want to know more about the script itself, use `praatOpen(script)`, which will open the script in Praat.
+The `praat_run()` function supports a list of optional argument to be passed to the script, if the script requires them for a form. In the call you see above, two arguments were specified: `Hertz` and `0.03`, which are passed to the form in the script. If you want to know more about the script itself, use `praat_open(script)`, which will open the script in Praat.

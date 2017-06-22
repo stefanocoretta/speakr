@@ -1,3 +1,21 @@
+#' Start Praat.
+#'
+#' It starts the GUI of Praat.
+#' @export
+start_praat <- function() {
+    system2(pkg.env$praat.path, wait = FALSE)
+}
+
+#' Open files with Praat.
+#'
+#' It opens a file or list of files.
+#'
+#' @param ... A list of strings.
+#' @export
+praat_open <- function(...) {
+    system2(pkg.env$praat.path, c("--open", list(...)), wait = FALSE)
+}
+
 #' Run a Praat script.
 #'
 #' It runs a file containing Praat scripting, with optional arguments.
