@@ -1,6 +1,6 @@
 # Change Log
 
-## Unreleased
+## [2.0.0] - 2017-06-24
 ### Added
 - `set_lmt_path`
 - `lmt_path`
@@ -19,3 +19,5 @@
 ## 1.0.0
 ### Added
 - everything
+
+[2.0.0]: https://github.com/stefanocoretta/speakr/compare/v1.0.0...v2.0.0
