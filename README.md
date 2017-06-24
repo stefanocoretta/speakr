@@ -6,7 +6,7 @@ This is the repository of the `R` package `speakr`.
 
 To install `speakr`, use `devtools::install_github("stefanocoretta/speakr", build_vignettes = TRUE)`.
 Also, be sure to install `lmt` from <https://github.com/driusan/lmt> if you want to weave the documentation of your Praat script with the literate markdown tangler.
-To use `lmt()` with `speakr`, you need to set the path to `lmt` with `set_lmt_path()`.
+To use `lmt()` with `speakr`, you either need to use the default location for your Go workspace (`$HOME`/go in Unix and `%USERPROFILE%/go` in Windows), or set the path to `lmt` with `set_lmt_path()` at the start of every R session.
 
 ## Disclaimer
 
