@@ -2,7 +2,7 @@
 % Please edit documentation in R/paths.R
 \name{set_praat_path}
 \alias{set_praat_path}
-\title{Set path to Praat}
+\title{Set path to Praat.}
 \usage{
 set_praat_path(path, default.path = FALSE)
 }

@@ -2,11 +2,16 @@
 
 ## Unreleased
 ### Added
-- `set_lmt_path()`
+- `set_lmt_path`
+- `lmt_path`
+- `set_lmt_path` on load with default `go/bin` paths
 
 ### Changed
-- path in `lmt()`
+- path in `lmt`
 - *applied tidy style to function names*
+
+### Fixed
+- code style of some functions
 
 ### Removed
 - old functions with cameCase names

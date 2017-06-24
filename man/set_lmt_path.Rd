@@ -2,12 +2,15 @@
 % Please edit documentation in R/paths.R
 \name{set_lmt_path}
 \alias{set_lmt_path}
-\title{Set path to lmt}
+\title{Set path to lmt.}
 \usage{
-set_lmt_path(path)
+set_lmt_path(path, default.path = FALSE)
 }
 \arguments{
 \item{path}{The path to the lmt executable.}
+
+\item{default.path}{If \code{TRUE}, the path is set to what \code{praatPath}
+returns.}
 }
 \description{
 It assigns user assigned path to \code{lmt}.
