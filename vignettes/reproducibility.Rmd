@@ -20,7 +20,7 @@ library(speakr)
 library(speakr)
 ```
 
-The function `praatRun()` can be used to run a Praat script. If the script output is to the Info window (for example with `writeInfoLine`), you can specify the argument `capture = TRUE` to capture the argument in a string and read it as a tibble with `read_csv` (from the `dplyr` package).
+The function `praat_run` can be used to run a Praat script. If the script output is to the Info window (for example with `writeInfoLine`), you can specify the argument `capture = TRUE` to capture the argument in a string and read it as a tibble with `read_csv` (from the `dplyr` package).
 
 ```{r run}
 # system.file() is needed here because the example files reside in the package.
@@ -34,4 +34,4 @@ formants <- praat_run(script, "Hertz", 0.03, capture = TRUE) %>%
 formants
 ```
 
-The `praat_run()` function supports a list of optional argument to be passed to the script, if the script requires them for a form. In the call you see above, two arguments were specified: `Hertz` and `0.03`, which are passed to the form in the script. If you want to know more about the script itself, use `praat_open(script)`, which will open the script in Praat.
+The `praat_run` function supports a list of optional argument to be passed to the script, if the script requires them for a form. In the call you see above, two arguments were specified: `Hertz` and `0.03`, which are passed to the form in the script. If you want to know more about the script itself, use `praat_open(script)`, which will open the script in Praat.

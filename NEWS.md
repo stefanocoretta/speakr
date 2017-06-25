@@ -1,6 +1,8 @@
 # Change Log
 
 ## Unreleased
+### Changed
+- clarified scope and installation of the package in README.md
 
 ## [2.0.0] - 2017-06-24
 ### Added
