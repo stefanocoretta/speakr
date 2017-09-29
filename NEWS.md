@@ -1,6 +1,8 @@
 # Change Log
 
-## Unreleased
+## [2.0.1] - 2017-09-29
+### Added
+- link to demo
 ### Changed
 - clarified scope and installation of the package in README.md
 
