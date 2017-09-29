@@ -1,5 +1,9 @@
 # Change Log
 
+## [2.0.2] - 2017-09-29
+### Fixed
+- missing date in citation
+
 ## [2.0.1] - 2017-09-29
 ### Added
 - link to demo
