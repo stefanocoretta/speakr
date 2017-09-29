@@ -30,4 +30,6 @@
 ### Added
 - everything
 
+[2.0.2]: https://github.com/stefanocoretta/speakr/compare/v2.0.1...v2.0.2
+[2.0.1]: https://github.com/stefanocoretta/speakr/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/stefanocoretta/speakr/compare/v1.0.0...v2.0.0
