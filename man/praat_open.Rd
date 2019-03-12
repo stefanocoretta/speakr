@@ -7,8 +7,18 @@
 praat_open(...)
 }
 \arguments{
-\item{...}{A list of strings.}
+\item{...}{A list of strings with the file paths.}
 }
 \description{
-It opens a file or list of files.
+It opens a file or list of files in the Praat GUI.
+}
+\examples{
+\dontrun{
+# Open a single file
+praat_open("./Desktop/your-script.praat")
+
+# Open multiple diles
+praat_open("./Desktop/script-1.praat", "./Desktop/script-2.praat")
+}
+
 }

@@ -1,5 +1,9 @@
 # Change Log
 
+## Unreleased
+### Changed
+- expanded documentation
+
 ## [2.0.2] - 2017-09-29
 ### Fixed
 - missing date in citation

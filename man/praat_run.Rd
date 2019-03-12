@@ -11,10 +11,17 @@ praat_run(script, ..., capture = FALSE)
 
 \item{...}{List of arguments to be passed to the script.}
 
-\item{capture}{If set to \code{TRUE}, the standard output of the script can be
-captured into a variable. This is useful if the script uses the "write to Info"
-commands.}
+\item{capture}{If set to \code{TRUE}, the standard output of the script (for
+example, from \code{writeInfo}) can be saved into a variable in R. If
+\code{FALSE} (the default) the output is logged to the console}
 }
 \description{
-It runs a file containing Praat scripting, with optional arguments.
+It runs a Praat script, with optional arguments passed to the script.
+}
+\examples{
+\dontrun{
+# Run get-formants.praat with argument "Hertz"
+praat_run("./get-formants.praat", "Hertz")
+}
+
 }

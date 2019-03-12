@@ -7,5 +7,12 @@
 start_praat()
 }
 \description{
-It starts the GUI of Praat.
+It opens the Praat GUI.
+}
+\examples{
+\dontrun{
+# Open Praat GUI.
+start_praat()
+}
+
 }
