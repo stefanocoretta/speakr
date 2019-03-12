@@ -10,6 +10,10 @@ vignette: >
 ---
 
 ```{r setup, echo=FALSE, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
 library(tidyverse)
 library(speakr)
 ```
@@ -23,7 +27,7 @@ library(speakr)
 ```
 
 The function `praat_run()` is used to run a Praat script, and the first argument of the function is the path to the script including its name.
-If the script logs results to a file, the file is created in the same directory as the one of the script, as expected, and nothing is returned in R.
+If the script logs results to a file, the file is created in the same directory as the one of the script, as expected, and nothing is returned in R. To load the results file in R, just read it in as you would with any other dataset.
 
 If, on the other hand, the script logs output to the Info window (for example by using `writeInfo` in the script), you can specify the argument `capture = TRUE` to capture the argument into an R character variable. The outputted string can then be read in as a data frame or tibble.
 
