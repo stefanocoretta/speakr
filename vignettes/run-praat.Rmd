@@ -1,0 +1,49 @@
+---
+title: "Run Praat in R"
+author: "Stefano Coretta"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Run Praat in R}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, echo=FALSE, include=FALSE}
+library(tidyverse)
+library(speakr)
+```
+
+speakr allows the user to run a Praat script from within R with optional parameters. In combination with knitr and R MarkDown it is possible to generate dynamic reports with phonetic analyses.
+
+To load and attach the package:
+
+```{r speakr, eval=FALSE}
+library(speakr)
+```
+
+The function `praat_run()` is used to run a Praat script, and the first argument of the function is the path to the script including its name.
+If the script logs results to a file, the file is created in the same directory as the one of the script, as expected, and nothing is returned in R.
+
+If, on the other hand, the script logs output to the Info window (for example by using `writeInfo` in the script), you can specify the argument `capture = TRUE` to capture the argument into an R character variable. The outputted string can then be read in as a data frame or tibble.
+
+The following example runs the script `get-formants.praat`, which requires two arguments, `"Herz"` and `0.03` (these will be passed to the `form` in the script). The script logs the results to the Info window with `appendInfoLine` so we use `capture = TRUE` here to stransform the console output into a string and pipe it (`%>%`) to `read_csv()`.
+
+```{r run}
+# system.file() is needed here because the example files reside in the package.
+# You can just include the file path directly in praat_run(), like 
+# praat_run("~/Desktop/script.praat")
+
+script <- system.file("extdata", "get-formants.praat", package = "speakr")
+
+formants <- praat_run(script, "Hertz", 0.03, capture = TRUE) %>%
+  read_csv()
+```
+
+Let's have a look at the content `formants`.
+
+```{r formants}
+formants
+```
+
+If you want to see the contents of the script we used, run `praat_open(system.file("extdata", "get-formants.praat", package = "speakr"))`, which will open the script in Praat.
