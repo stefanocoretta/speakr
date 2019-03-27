@@ -1,6 +1,6 @@
 ---
 title: "Literate Praat with `lmt`"
-author: "Vignette Author"
+author: "Stefano Coretta"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
