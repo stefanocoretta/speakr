@@ -1,6 +1,6 @@
 #' Get system path to Praat.
 #'
-#' The function returns the path to the Praat executable depeding on the
+#' The function returns the path to the Praat executable depending on the
 #'     system.
 #'
 #' @return The path to the Praat executable.
@@ -44,7 +44,7 @@ get_praat_path <- function() {
 
 #' Get system path to lmt.
 #'
-#' The function returns the path to the lmt executable depeding on the
+#' The function returns the path to the lmt executable depending on the
 #'     system.
 #'
 #' @return The path to the lmt executable.

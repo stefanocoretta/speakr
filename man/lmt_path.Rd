@@ -10,7 +10,7 @@ lmt_path()
 The path to the lmt executable.
 }
 \description{
-The function returns the path to the lmt executable depeding on the
+The function returns the path to the lmt executable depending on the
     system.
 }
 \keyword{internal}

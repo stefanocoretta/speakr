@@ -10,7 +10,7 @@ praat_path()
 The path to the Praat executable.
 }
 \description{
-The function returns the path to the Praat executable depeding on the
+The function returns the path to the Praat executable depending on the
     system.
 }
 \keyword{internal}

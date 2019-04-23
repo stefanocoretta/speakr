@@ -31,7 +31,7 @@ If the script logs results to a file, the file is created in the same directory 
 
 If, on the other hand, the script logs output to the Info window (for example by using `writeInfo` in the script), you can specify the argument `capture = TRUE` to capture the argument into an R character variable. The outputted string can then be read in as a data frame or tibble.
 
-The following example runs the script `get-formants.praat`, which requires two arguments, `"Herz"` and `0.03` (these will be passed to the `form` in the script). The script logs the results to the Info window with `appendInfoLine` so we use `capture = TRUE` here to stransform the console output into a string and pipe it (`%>%`) to `read_csv()`.
+The following example runs the script `get-formants.praat`, which requires two arguments, `"Herz"` and `0.03` (these will be passed to the `form` in the script). The script logs the results to the Info window with `appendInfoLine` so we use `capture = TRUE` here to transform the console output into a string and pipe it (`%>%`) to `read_csv()`.
 
 ```{r run}
 # system.file() is needed here because the example files reside in the package.
