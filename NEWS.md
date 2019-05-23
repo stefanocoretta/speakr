@@ -1,5 +1,10 @@
 # Change Log
 
+## 2.1.0.9000
+### Added
+- `pandoc-praat` asset
+- flamenco theme (supports Praat scripting)
+
 ## [2.1.0] - 2019-04-23
 ### Changed
 - expanded documentation
