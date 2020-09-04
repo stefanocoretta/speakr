@@ -53,12 +53,18 @@ lmt_path <- function() {
     sysname <- Sys.info()['sysname']
 
     if (sysname == "Darwin") {
-        return(normalizePath("~/go/bin/lmt"))
+        if (dir.exists("~/go/bin/lmt")) {
+            return(normalizePath("~/go/bin/lmt"))
+        }
     } else if (sysname == "Linux") {
-        return(normalizePath("~/go/bin/lmt"))
+        if (dir.exists("~/go/bin/lmt")) {
+            return(normalizePath("~/go/bin/lmt"))
+        }
     } else if (sysname == "Windows") {
         home <- Sys.getenv("HOME")
-        return(normalizePath(paste(home, "go/bin/lmt")))
+        if (dir.exists(paste(home, "go/bin/lmt"))) {
+            return(normalizePath(paste(home, "go/bin/lmt")))
+        }
     }
 }
 

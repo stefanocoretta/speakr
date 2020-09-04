@@ -1,10 +1,10 @@
 ---
-title: "Literate Praat with `lmt`"
+title: "Literate Praat with lmt"
 author: "Stefano Coretta"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Literate Praat}
+  %\VignetteIndexEntry{Literate Praat with lmt}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

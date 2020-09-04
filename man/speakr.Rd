@@ -3,7 +3,6 @@
 \docType{package}
 \name{speakr}
 \alias{speakr}
-\alias{speakr-package}
 \title{speakr: A wrapper for the Phonetic Software Praat}
 \description{
 It allows running Praat scripts from R and it provides some
