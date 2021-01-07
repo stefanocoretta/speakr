@@ -1,0 +1,29 @@
+---
+title: "purl-praat"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{purl-praat}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(speakr)
+```
+
+```{r}
+1 + 2
+```
+
+```{praat}
+selectObject: 1
+Get number of intervals: 1
+```
+
