@@ -4,3 +4,7 @@
 ^NEWS\.md$
 ^speakr.sublime-*
 ^README\.Rmd$
+^\.github$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

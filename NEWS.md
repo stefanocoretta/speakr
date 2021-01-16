@@ -1,5 +1,9 @@
 # 2.1.1.9000 (development version)
 
+## Added
+
+- 🎉 Use pkgdown!
+
 ## Changed
 
 - Use `usethis::use_package_doc()`.
