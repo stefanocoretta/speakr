@@ -2,6 +2,8 @@
 #'
 #' It opens the Praat GUI.
 #'
+#' @return Nothing. Used for its side effects.
+#'
 #' @examples
 #' \dontrun{
 #' # Open Praat GUI.
@@ -17,8 +19,10 @@ start_praat <- function() {
 #'
 #' It opens a file or list of files in the Praat GUI.
 #'
-#' @param ... A charachter vector with the path to the file. Include multiple vector
+#' @param ... A character vector with the path to the file. Include multiple vector
 #'   arguments to open multiple files.
+#'
+#' @return Nothing. Used for its side effects.
 #'
 #' @examples
 #' \dontrun{
@@ -43,6 +47,10 @@ praat_open <- function(...) {
 #' @param capture If set to \code{TRUE}, the standard output of the script (for
 #'   example, from \code{writeInfo}) can be saved into a variable in R. If
 #'   \code{FALSE} (the default) the output is logged to the console.
+#'
+#' @return If the Praat script returns standard output this is returned as a
+#'   character vector. Also, if the script has instructions to create files,
+#'   these will be created.
 #'
 #' @examples
 #' \dontrun{

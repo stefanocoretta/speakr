@@ -4,6 +4,7 @@
 #'     system.
 #'
 #' @return The path to the Praat executable.
+#'
 #' @keywords internal
 praat_path <- function() {
     sysname <- Sys.info()['sysname']
@@ -25,6 +26,9 @@ praat_path <- function() {
 #' @param path The path to the Praat executable.
 #' @param default.path If \code{TRUE}, the path is set to what \code{praatPath}
 #' returns.
+#'
+#' @return Nothing. It is used for its side effects.
+#'
 #' @export
 set_praat_path <- function(path, default.path = FALSE) {
     if (default.path == FALSE) {
@@ -37,6 +41,9 @@ set_praat_path <- function(path, default.path = FALSE) {
 #' Print path to Praat.
 #'
 #' It prints the path to Praat on the console for inspection.
+#'
+#' @return A character vector with the Praat path.
+#'
 #' @export
 get_praat_path <- function() {
     return(pkg.env$praat.path)

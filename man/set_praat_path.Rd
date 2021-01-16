@@ -12,6 +12,9 @@ set_praat_path(path, default.path = FALSE)
 \item{default.path}{If \code{TRUE}, the path is set to what \code{praatPath}
 returns.}
 }
+\value{
+Nothing. It is used for its side effects.
+}
 \description{
 It assigns the default path to Praat or the user assigned path (when
     \code{default.path = FALSE}, which is the default).

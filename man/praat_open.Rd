@@ -7,8 +7,11 @@
 praat_open(...)
 }
 \arguments{
-\item{...}{A charachter vector with the path to the file. Include multiple vector
+\item{...}{A character vector with the path to the file. Include multiple vector
 arguments to open multiple files.}
+}
+\value{
+Nothing. Used for its side effects.
 }
 \description{
 It opens a file or list of files in the Praat GUI.

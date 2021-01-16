@@ -6,6 +6,9 @@
 \usage{
 start_praat()
 }
+\value{
+Nothing. Used for its side effects.
+}
 \description{
 It opens the Praat GUI.
 }

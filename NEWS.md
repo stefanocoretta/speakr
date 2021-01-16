@@ -3,6 +3,7 @@
 ## Changed
 
 - Use `usethis::use_package_doc()`.
+- 📝 Various updates to the documentation.
 
 ## Removed
 
