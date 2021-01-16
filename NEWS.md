@@ -1,6 +1,8 @@
 # 2.1.1.9000 (development version)
 
+## Changed
 
+- Use `usethis::use_package_doc()`.
 
 
 # 2.1.1
