@@ -7,7 +7,8 @@
 praat_open(...)
 }
 \arguments{
-\item{...}{A list of strings with the file paths.}
+\item{...}{A charachter vector with the path to the file. Include multiple vector
+arguments to open multiple files.}
 }
 \description{
 It opens a file or list of files in the Praat GUI.
@@ -17,7 +18,7 @@ It opens a file or list of files in the Praat GUI.
 # Open a single file
 praat_open("./Desktop/your-script.praat")
 
-# Open multiple diles
+# Open multiple files
 praat_open("./Desktop/script-1.praat", "./Desktop/script-2.praat")
 }
 

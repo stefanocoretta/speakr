@@ -13,15 +13,22 @@ praat_run(script, ..., capture = FALSE)
 
 \item{capture}{If set to \code{TRUE}, the standard output of the script (for
 example, from \code{writeInfo}) can be saved into a variable in R. If
-\code{FALSE} (the default) the output is logged to the console}
+\code{FALSE} (the default) the output is logged to the console.}
 }
 \description{
 It runs a Praat script, with optional arguments passed to the script.
 }
 \examples{
 \dontrun{
-# Run get-formants.praat with argument "Hertz"
+script <- system.file("extdata", "get-formants.praat", package = "speakr")
+
+# Run get-formants.praat with argument "Hertz" and log to console.
 praat_run("./get-formants.praat", "Hertz")
+
+# Run get-formants.praat with arguments and save in R variable.
+library(readr)
+formants <- praat_run(script, "Hertz", 0.03, capture = TRUE) \%>\%
+  read_csv()
 }
 
 }

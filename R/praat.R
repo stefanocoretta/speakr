@@ -17,14 +17,15 @@ start_praat <- function() {
 #'
 #' It opens a file or list of files in the Praat GUI.
 #'
-#' @param ... A list of strings with the file paths.
+#' @param ... A charachter vector with the path to the file. Include multiple vector
+#'   arguments to open multiple files.
 #'
 #' @examples
 #' \dontrun{
 #' # Open a single file
 #' praat_open("./Desktop/your-script.praat")
 #'
-#' # Open multiple diles
+#' # Open multiple files
 #' praat_open("./Desktop/script-1.praat", "./Desktop/script-2.praat")
 #' }
 #'
@@ -41,12 +42,19 @@ praat_open <- function(...) {
 #' @param ... List of arguments to be passed to the script.
 #' @param capture If set to \code{TRUE}, the standard output of the script (for
 #'   example, from \code{writeInfo}) can be saved into a variable in R. If
-#'   \code{FALSE} (the default) the output is logged to the console
+#'   \code{FALSE} (the default) the output is logged to the console.
 #'
 #' @examples
 #' \dontrun{
-#' # Run get-formants.praat with argument "Hertz"
+#' script <- system.file("extdata", "get-formants.praat", package = "speakr")
+#'
+#' # Run get-formants.praat with argument "Hertz" and log to console.
 #' praat_run("./get-formants.praat", "Hertz")
+#'
+#' # Run get-formants.praat with arguments and save in R variable.
+#' library(readr)
+#' formants <- praat_run(script, "Hertz", 0.03, capture = TRUE) %>%
+#'   read_csv()
 #' }
 #'
 #' @export
