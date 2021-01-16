@@ -4,6 +4,10 @@
 
 - Use `usethis::use_package_doc()`.
 
+## Removed
+
+- 🔥 Utilities for `lmt` have been removed. (R-based literate Praat capabilities will be reintroduced in a future release).
+
 
 # 2.1.1
 
