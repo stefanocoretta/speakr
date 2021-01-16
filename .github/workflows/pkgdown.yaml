@@ -19,6 +19,10 @@ jobs:
 
       - uses: r-lib/actions/setup-pandoc@v1
 
+      - name: Install Praat
+        run: |
+          /usr/local/bin/brew install --cask praat
+
       - name: Query dependencies
         run: |
           install.packages('remotes')
@@ -41,7 +45,7 @@ jobs:
         shell: Rscript {0}
 
       - name: Install package
-        run: R CMD INSTALL --no-build-vignettes .
+        run: R CMD INSTALL .
 
       - name: Deploy package
         run: |
