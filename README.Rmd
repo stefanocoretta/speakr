@@ -1,18 +1,28 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
 
 # speakr: A Wrapper for the Phonetic Software Praat
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-With speakr, you can run Praat scripts in R and capture their `infoLine`
-output.
+With speakr, you can run Praat scripts in R and capture their `infoLine` output.
 
 ## Installation
 
-You can install the released version of speakr from
-[CRAN](https://CRAN.R-project.org) with:
+You can install the released version of speakr from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("speakr")

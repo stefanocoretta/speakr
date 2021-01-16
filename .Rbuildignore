@@ -3,3 +3,4 @@
 ^README\.md$
 ^NEWS\.md$
 ^speakr.sublime-*
+^README\.Rmd$
