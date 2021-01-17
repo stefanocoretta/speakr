@@ -19,6 +19,12 @@
     );
   }
 </script><title>Run Praat in R • speakr</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- Flatly Theme - Light  --><link id="css-light" rel="stylesheet" href="https://bootswatch.com/3/flatly/bootstrap.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
 <!-- Darkly Theme - Dark --><link id="css-dark" rel="stylesheet" href="https://bootswatch.com/3/darkly/bootstrap.css" media="(prefers-color-scheme: dark)">
 <!-- preferably CSS --><link rel="stylesheet" href="../preferably.css">
@@ -30,6 +36,7 @@
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Run Praat in R">
 <meta property="og:description" content="speakr">
+<meta property="og:image" content="/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -79,7 +86,18 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/stefanocoretta/speakr/">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+        
+        
+
+
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -97,7 +115,7 @@
             
             <h4 class="date">2021-01-17</h4>
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/stefanocoretta/speakr/blob/master/vignettes/run-praat.Rmd"><code>vignettes/run-praat.Rmd</code></a></small>
       <div class="hidden name"><code>run-praat.Rmd</code></div>
 
     </div>
@@ -107,7 +125,7 @@
 <p>speakr allows the user to run a Praat script from within R with optional parameters. In combination with knitr and R MarkDown it is possible to generate dynamic reports with phonetic analyses.</p>
 <p>To load and attach the package:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">speakr</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/stefanocoretta/speakr">speakr</a></span><span class="op">)</span></code></pre></div>
 <p>The function <code><a href="../reference/praat_run.html">praat_run()</a></code> is used to run a Praat script, and the first argument of the function is the path to the script including its name. If the script logs results to a file, the file is created in the same directory as the one of the script, as expected, and nothing is returned in R. To load the results file in R, just read it in as you would with any other dataset.</p>
 <p>If, on the other hand, the script logs output to the Info window (for example by using <code>writeInfo</code> in the script), you can specify the argument <code>capture = TRUE</code> to capture the argument into an R character variable. The outputted string can then be read in as a data frame or tibble.</p>
 <p>The following example runs the script <code>get-formants.praat</code>, which requires two arguments, <code>"Herz"</code> and <code>0.03</code> (these will be passed to the <code>form</code> in the script). The script logs the results to the Info window with <code>appendInfoLine</code> so we use <code>capture = TRUE</code> here to transform the console output into a string and pipe it (<code>%&gt;%</code>) to <code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code>.</p>
