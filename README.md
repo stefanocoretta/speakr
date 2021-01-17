@@ -1,9 +1,12 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# speakr: A Wrapper for the Phonetic Software Praat
+# speakr: A Wrapper for the Phonetic Software Praat <img src='man/figures/logo.png' align="right" height="120" />
 
 <!-- badges: start -->
+
+[![](https://img.shields.io/badge/devel%20version-2.1.1.9000-blue.svg)](https://github.com/stefanocoretta/speakr)
+[![](https://img.shields.io/badge/devel%20version-2.1.1.9000-orange.svg)](https://github.com/stefanocoretta/speakr)
 <!-- badges: end -->
 
 With speakr, you can run Praat scripts in R and capture their `infoLine`

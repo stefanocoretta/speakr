@@ -3,6 +3,7 @@
 ## Added
 
 - 🎉 Use pkgdown!
+- 🎉 Add logo!
 
 ## Changed
 

@@ -16,9 +16,11 @@ theme_set(theme_minimal())
 library(speakr)
 ```
 
-# speakr: A Wrapper for the Phonetic Software Praat
+# speakr: A Wrapper for the Phonetic Software Praat <img src='man/figures/logo.png' align="right" height="120" />
 
 <!-- badges: start -->
+`r badger::badge_github_version(color = "blue")`
+`r badger::badge_devel(color = "orange")`
 <!-- badges: end -->
 
 With speakr, you can run Praat scripts in R and capture their `infoLine` output.
