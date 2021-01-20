@@ -55,7 +55,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">speakr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">3.0.0</span>
       </span>
     </div>
 
@@ -189,12 +189,20 @@
 <span class="va">unit</span> <span class="op">=</span> <span class="st">"Bark"</span>
 <span class="va">window</span> <span class="op">=</span> <span class="fl">0.02</span>
 
-<span class="va">formants</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/praat_run.html">praat_run</a></span><span class="op">(</span><span class="va">script</span>, <span class="va">unit</span>, <span class="va">window</span>, capture <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">%&gt;%</span>
+<span class="va">f_bark</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/praat_run.html">praat_run</a></span><span class="op">(</span><span class="va">script</span>, <span class="va">unit</span>, <span class="va">window</span>, capture <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/attr.html">attr</a></span><span class="op">(</span><span class="va">formants</span>, <span class="st">"args"</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>unit <span class="op">=</span> <span class="va">unit</span>, window <span class="op">=</span> <span class="va">window</span><span class="op">)</span></code></pre></div>
-<p>Let’s have a look at <code>formants</code>.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">formants</span>
+<span class="fu"><a href="https://rdrr.io/r/base/attr.html">attr</a></span><span class="op">(</span><span class="va">f_bark</span>, <span class="st">"args"</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>unit <span class="op">=</span> <span class="va">unit</span>, window <span class="op">=</span> <span class="va">window</span><span class="op">)</span></code></pre></div>
+<pre><code>#&gt; 
+#&gt; ── Column specification ────────────────────────────────────────────────────────
+#&gt; cols(
+#&gt;   vowel = col_character(),
+#&gt;   F1 = col_double(),
+#&gt;   F2 = col_double(),
+#&gt;   F3 = col_double()
+#&gt; )</code></pre>
+<p>Let’s have a look at <code>f_bark</code>.</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">f_bark</span>
 <span class="co">#&gt; # A tibble: 5 x 4</span>
 <span class="co">#&gt;   vowel    F1    F2    F3</span>
 <span class="co">#&gt;   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
@@ -204,8 +212,8 @@
 <span class="co">#&gt; 4 o      5.46  7.61  14.3</span>
 <span class="co">#&gt; 5 u      4.28  9.12  15.1</span></code></pre></div>
 <p>And plot it.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">formants</span> <span class="op">%&gt;%</span>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">f_bark</span> <span class="op">%&gt;%</span>
   <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">F2</span>, <span class="va">F1</span>, label <span class="op">=</span> <span class="va">vowel</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">geom_label</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">labs</span><span class="op">(</span>
@@ -215,7 +223,7 @@
   <span class="op">)</span> <span class="op">+</span>
   <span class="fu">scale_x_reverse</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"top"</span>, limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">14</span>, <span class="fl">7</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">scale_y_reverse</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"right"</span>, limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">8</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<p><img src="run-praat_files/figure-html/formants-plot-1.png" width="700"></p>
+<p><img src="run-praat_files/figure-html/f-bark-plot-1.png" width="700"></p>
 </div>
   </div>
 
