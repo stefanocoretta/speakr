@@ -1,4 +1,4 @@
-# 3.0.0
+# speakr 3.0.0
 
 ## Added
 
@@ -15,7 +15,7 @@
 * 🔥 Utilities for `lmt` have been removed. (R-based literate Praat capabilities will be reintroduced in a future release).
 
 
-# 2.1.1
+# speakr 2.1.1
 
 ## Added
 
@@ -27,19 +27,19 @@
 
 * warning message about `lmt` path at install time when `lmt` is not installed
 
-# 2.1.0
+# speakr 2.1.0
 
 ## Changed
 
 * expanded documentation
 
-# 2.0.2
+# speakr 2.0.2
 
 ## Fixed
 
 * missing date in citation
 
-# 2.0.1
+# speakr 2.0.1
 
 ## Added
 
@@ -49,7 +49,7 @@
 
 * clarified scope and installation of the package in README.md
 
-# 2.0.0
+# speakr 2.0.0
 
 ## Added
 
@@ -73,7 +73,7 @@
 
 * old functions with camelCase names
 
-# 1.0.0
+# speakr 1.0.0
 
 ## Added
 
