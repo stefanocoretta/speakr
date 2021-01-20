@@ -19,7 +19,7 @@ theme_set(theme_dark())
 library(speakr)
 ```
 
-The package speakr allows the user to run a Praat script from within R, optionally passing paratmeters to the script if a form is used.
+The package speakr allows the user to run a Praat script from within R, optionally passing parameters to the script if a form is used.
 In combination with rmarkdown::render(), it is possible to generate dynamic reports which include phonetic analyses.
 
 Load the package with:
