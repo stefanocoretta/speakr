@@ -1,18 +1,18 @@
-# 2.1.1.9000 (development version)
+# 3.0.0
 
 ## Added
 
-- 🎉 Use pkgdown!
-- 🎉 Add logo!
+* 🎉 Use pkgdown!
+* 🎉 Add logo!
 
 ## Changed
 
-- Use `usethis::use_package_doc()`.
-- 📝 Various updates to the documentation.
+* Use `usethis::use_package_doc()`.
+* 📝 Various updates to the documentation.
 
 ## Removed
 
-- 🔥 Utilities for `lmt` have been removed. (R-based literate Praat capabilities will be reintroduced in a future release).
+* 🔥 Utilities for `lmt` have been removed. (R-based literate Praat capabilities will be reintroduced in a future release).
 
 
 # 2.1.1
