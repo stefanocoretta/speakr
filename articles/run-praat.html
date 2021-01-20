@@ -113,7 +113,7 @@
       <h1 data-toc-skip>Run Praat in R</h1>
                         <h4 class="author">Stefano Coretta</h4>
             
-            <h4 class="date">2021-01-17</h4>
+            <h4 class="date">2021-01-20</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/stefanocoretta/speakr/blob/master/vignettes/run-praat.Rmd"><code>vignettes/run-praat.Rmd</code></a></small>
       <div class="hidden name"><code>run-praat.Rmd</code></div>
@@ -122,39 +122,108 @@
 
     
     
-<p>speakr allows the user to run a Praat script from within R with optional parameters. In combination with knitr and R MarkDown it is possible to generate dynamic reports with phonetic analyses.</p>
-<p>To load and attach the package:</p>
+<p>The package speakr allows the user to run a Praat script from within R, optionally passing paratmeters to the script if a form is used. In combination with rmarkdown::render(), it is possible to generate dynamic reports which include phonetic analyses.</p>
+<p>Load the package with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/stefanocoretta/speakr">speakr</a></span><span class="op">)</span></code></pre></div>
-<p>The function <code><a href="../reference/praat_run.html">praat_run()</a></code> is used to run a Praat script, and the first argument of the function is the path to the script including its name. If the script logs results to a file, the file is created in the same directory as the one of the script, as expected, and nothing is returned in R. To load the results file in R, just read it in as you would with any other dataset.</p>
-<p>If, on the other hand, the script logs output to the Info window (for example by using <code>writeInfo</code> in the script), you can specify the argument <code>capture = TRUE</code> to capture the argument into an R character variable. The outputted string can then be read in as a data frame or tibble.</p>
-<p>The following example runs the script <code>get-formants.praat</code>, which requires two arguments, <code>"Herz"</code> and <code>0.03</code> (these will be passed to the <code>form</code> in the script). The script logs the results to the Info window with <code>appendInfoLine</code> so we use <code>capture = TRUE</code> here to transform the console output into a string and pipe it (<code>%&gt;%</code>) to <code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code>.</p>
+<div id="run-a-praat-script" class="section level2">
+<h2 class="hasAnchor">
+<a href="#run-a-praat-script" class="anchor"></a>Run a Praat script</h2>
+<p>To run a Praat script, use the function <code><a href="../reference/praat_run.html">praat_run()</a></code>. The first argument of the function is the path to the script.</p>
+<p>For example:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># system.file() is needed here because the example files reside in the package.</span>
-<span class="co"># You can just include the file path directly in praat_run(), like </span>
-<span class="co"># praat_run("~/Desktop/script.praat")</span>
+<code class="sourceCode R"><span class="va">script</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"play-greetings.praat"</span>, package <span class="op">=</span> <span class="st">"speakr"</span><span class="op">)</span>
 
-<span class="va">script</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"get-formants.praat"</span>, package <span class="op">=</span> <span class="st">"speakr"</span><span class="op">)</span>
-
-<span class="va">formants</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/praat_run.html">praat_run</a></span><span class="op">(</span><span class="va">script</span>, <span class="st">"Hertz"</span>, <span class="fl">0.03</span>, capture <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<p>Let’s have a look at the content <code>formants</code>.</p>
+<span class="fu"><a href="../reference/praat_run.html">praat_run</a></span><span class="op">(</span><span class="va">script</span><span class="op">)</span></code></pre></div>
+<p>If the script has side effects, like creating new files or editing existing ones, these effects will take place.</p>
+</div>
+<div id="file-output" class="section level2">
+<h2 class="hasAnchor">
+<a href="#file-output" class="anchor"></a>File output</h2>
+<p>If the script logs text (like a set of acoustic measurements) to a file (with <code>writeFile[Line]</code> and <code>appendFile[Line]</code>), the file is created in the directory specified in the script, and nothing is returned in R. To load the results file in R, just read it in as you would with any other dataset.</p>
+<p>The following runs a script that gets formant values and outputs a file with the formant measurements in your home folder.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">script</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"get-formants.praat"</span>, package <span class="op">=</span> <span class="st">"speakr"</span><span class="op">)</span>
+
+<span class="fu"><a href="../reference/praat_run.html">praat_run</a></span><span class="op">(</span><span class="va">script</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="praat-info-window-output" class="section level2">
+<h2 class="hasAnchor">
+<a href="#praat-info-window-output" class="anchor"></a>Praat Info window output</h2>
+<p>If, on the other hand, the script logs output to the Info window (with <code>writeInfo[Line]</code> and <code>appendInfo[Line]</code>), the output will be sent to the R console.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">script</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"get-formants-capt.praat"</span>, package <span class="op">=</span> <span class="st">"speakr"</span><span class="op">)</span>
+
+<span class="co"># Output to R console</span>
+<span class="fu"><a href="../reference/praat_run.html">praat_run</a></span><span class="op">(</span><span class="va">script</span><span class="op">)</span></code></pre></div>
+<pre><code>#&gt; vowel,F1,F2,F3 a,784.4671170665314,1390.927070235929,2433.2403445805335 e,417.00791908249613,2042.453249988405,2423.8583300060627 i,259.0985814360339,2231.740765785137,2819.218714861659 o,562.2955245317842,854.5311682738487,2463.26727657427 u,434.4420321283883,1331.362161871936,2815.9876831692327</code></pre>
+<p>You can use <code>capture = TRUE</code> in <code><a href="../reference/praat_run.html">praat_run()</a></code> to capture the output and pass it to an R variable. The output will be a character string.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Output to R variable</span>
+<span class="va">formants</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/praat_run.html">praat_run</a></span><span class="op">(</span><span class="va">script</span>, capture <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="va">formants</span><span class="op">)</span></code></pre></div>
+<pre><code>#&gt; vowel,F1,F2,F3 a,784.4671170665314,1390.927070235929,2433.2403445805335 e,417.00791908249613,2042.453249988405,2423.8583300060627 i,259.0985814360339,2231.740765785137,2819.218714861659 o,562.2955245317842,854.5311682738487,2463.26727657427 u,434.4420321283883,1331.362161871936,2815.9876831692327</code></pre>
+<p>Of course, you can redirect the captured output using the pipe <code>%&gt;%</code>, for example to read the output as a tibble.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
+<span class="co"># Output to R tibble</span>
+<span class="va">formants</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/praat_run.html">praat_run</a></span><span class="op">(</span><span class="va">script</span>, capture <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">formants</span><span class="op">)</span>
+<span class="fu">glimpse</span><span class="op">(</span><span class="va">formants</span><span class="op">)</span></code></pre></div>
+<pre><code>#&gt; [1] "spec_tbl_df" "tbl_df"      "tbl"         "data.frame"
+#&gt; Rows: 5
+#&gt; Columns: 4
+#&gt; $ vowel &lt;chr&gt; "a", "e", "i", "o", "u"
+#&gt; $ F1    &lt;dbl&gt; 784.4671, 417.0079, 259.0986, 562.2955, 434.4420
+#&gt; $ F2    &lt;dbl&gt; 1390.9271, 2042.4532, 2231.7408, 854.5312, 1331.3622
+#&gt; $ F3    &lt;dbl&gt; 2433.240, 2423.858, 2819.219, 2463.267, 2815.988</code></pre>
+</div>
+<div id="script-arguments-using-praat-forms" class="section level2">
+<h2 class="hasAnchor">
+<a href="#script-arguments-using-praat-forms" class="anchor"></a>Script arguments using Praat forms</h2>
+<p>It is possible to pass arguments to the script from R, using Praat <code>form</code>s in the script. The following example runs the script <code>get-formants-args.praat</code>, which requires two arguments: unit (a string, either <code>"Hertz"</code> or <code>"Bark"</code>) and window size (a number). Multiple arguments can be specified in <code><a href="../reference/praat_run.html">praat_run()</a></code>, in the order in which they appear in the <code>form</code>. These arguments will be passed to the <code>form</code> in the script.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">script</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"get-formants-args.praat"</span>, package <span class="op">=</span> <span class="st">"speakr"</span><span class="op">)</span>
+
+<span class="va">unit</span> <span class="op">=</span> <span class="st">"Bark"</span>
+<span class="va">window</span> <span class="op">=</span> <span class="fl">0.02</span>
+
+<span class="va">formants</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/praat_run.html">praat_run</a></span><span class="op">(</span><span class="va">script</span>, <span class="va">unit</span>, <span class="va">window</span>, capture <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/attr.html">attr</a></span><span class="op">(</span><span class="va">formants</span>, <span class="st">"args"</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>unit <span class="op">=</span> <span class="va">unit</span>, window <span class="op">=</span> <span class="va">window</span><span class="op">)</span></code></pre></div>
+<p>Let’s have a look at <code>formants</code>.</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">formants</span>
 <span class="co">#&gt; # A tibble: 5 x 4</span>
 <span class="co">#&gt;   vowel    F1    F2    F3</span>
 <span class="co">#&gt;   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 a      784. 1391. 2433.</span>
-<span class="co">#&gt; 2 e      417. 2042. 2424.</span>
-<span class="co">#&gt; 3 i      259. 2232. 2819.</span>
-<span class="co">#&gt; 4 o      562.  855. 2463.</span>
-<span class="co">#&gt; 5 u      434. 1331. 2816.</span></code></pre></div>
-<p>If you want to see the contents of the script we used, run <code><a href="../reference/praat_open.html">praat_open(system.file("extdata", "get-formants.praat", package = "speakr"))</a></code>, which will open the script in Praat.</p>
+<span class="co">#&gt; 1 a      7.16 10.5   14.2</span>
+<span class="co">#&gt; 2 e      4.24 13.0   14.2</span>
+<span class="co">#&gt; 3 i      2.72 13.6   15.2</span>
+<span class="co">#&gt; 4 o      5.46  7.61  14.3</span>
+<span class="co">#&gt; 5 u      4.28  9.12  15.1</span></code></pre></div>
+<p>And plot it.</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">formants</span> <span class="op">%&gt;%</span>
+  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">F2</span>, <span class="va">F1</span>, label <span class="op">=</span> <span class="va">vowel</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">geom_label</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">labs</span><span class="op">(</span>
+    title <span class="op">=</span> <span class="st">"Vowel plot"</span>,
+    x <span class="op">=</span> <span class="st">"F2 (Bark)"</span>,
+    y <span class="op">=</span> <span class="st">"F1 (Bark)"</span>
+  <span class="op">)</span> <span class="op">+</span>
+  <span class="fu">scale_x_reverse</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"top"</span>, limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">14</span>, <span class="fl">7</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">scale_y_reverse</span><span class="op">(</span>position <span class="op">=</span> <span class="st">"right"</span>, limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">8</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p><img src="run-praat_files/figure-html/formants-plot-1.png" width="700"></p>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 
