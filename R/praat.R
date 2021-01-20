@@ -27,10 +27,15 @@ start_praat <- function() {
 #' @examples
 #' \dontrun{
 #' # Open a single file
-#' praat_open("./Desktop/your-script.praat")
+#'
+#' script <- system.file("extdata", "get-formants.praat", package = "speakr")
+#' praat_open(script)
 #'
 #' # Open multiple files
-#' praat_open("./Desktop/script-1.praat", "./Desktop/script-2.praat")
+#'
+#' wav <- system.file("extdata", "vowels.wav", package = "speakr")
+#' tg <- system.file("extdata", "vowels.TextGrid", package = "speakr")
+#' praat_open(wav, tg)
 #' }
 #'
 #' @export
@@ -57,7 +62,7 @@ praat_open <- function(...) {
 #' script <- system.file("extdata", "get-formants.praat", package = "speakr")
 #'
 #' # Run get-formants.praat with argument "Hertz" and log to console.
-#' praat_run("./get-formants.praat", "Hertz")
+#' praat_run(script, "Hertz")
 #'
 #' # Run get-formants.praat with arguments and save in R variable.
 #' library(readr)

@@ -19,10 +19,15 @@ It opens a file or list of files in the Praat GUI.
 \examples{
 \dontrun{
 # Open a single file
-praat_open("./Desktop/your-script.praat")
+
+script <- system.file("extdata", "get-formants.praat", package = "speakr")
+praat_open(script)
 
 # Open multiple files
-praat_open("./Desktop/script-1.praat", "./Desktop/script-2.praat")
+
+wav <- system.file("extdata", "vowels.wav", package = "speakr")
+tg <- system.file("extdata", "vowels.TextGrid", package = "speakr")
+praat_open(wav, tg)
 }
 
 }

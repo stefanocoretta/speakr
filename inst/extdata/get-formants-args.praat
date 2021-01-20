@@ -2,10 +2,20 @@ sound = Read from file: "vowels.wav"
 formant = To Formant (burg): 0, 5, 5000, 0.05, 50
 textgrid = Read from file: "vowels.TextGrid"
 header$ = "vowel,F1,F2,F3"
-writeFileLine: "~/formants.csv", header$
+writeInfoLine: header$
 
-measure$ = "Hertz"
-window = 0.03
+form Get formants
+    choice Measure 1
+        button Hertz
+        button Bark
+    real Window_(sec) 0.03
+endform
+
+if measure == 1
+    measure$ = "Hertz"
+else
+    measure$ = "Bark"
+endif
 
 selectObject: textgrid
 intervals = Get number of intervals: 1
@@ -25,7 +35,7 @@ for interval to intervals - 1
         f3 = Get mean: 3, start, end, measure$
 
         resultLine$ = "'vowel$','f1','f2','f3'"
-        appendFileLine: "~/formants.csv", resultLine$
+        appendInfoLine: resultLine$
         selectObject: textgrid
     endif
 endfor

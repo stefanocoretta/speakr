@@ -28,7 +28,7 @@ It runs a Praat script, with optional arguments passed to the script.
 script <- system.file("extdata", "get-formants.praat", package = "speakr")
 
 # Run get-formants.praat with argument "Hertz" and log to console.
-praat_run("./get-formants.praat", "Hertz")
+praat_run(script, "Hertz")
 
 # Run get-formants.praat with arguments and save in R variable.
 library(readr)

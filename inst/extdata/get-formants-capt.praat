@@ -2,7 +2,7 @@ sound = Read from file: "vowels.wav"
 formant = To Formant (burg): 0, 5, 5000, 0.05, 50
 textgrid = Read from file: "vowels.TextGrid"
 header$ = "vowel,F1,F2,F3"
-writeFileLine: "~/formants.csv", header$
+writeInfoLine: header$
 
 measure$ = "Hertz"
 window = 0.03
@@ -25,7 +25,7 @@ for interval to intervals - 1
         f3 = Get mean: 3, start, end, measure$
 
         resultLine$ = "'vowel$','f1','f2','f3'"
-        appendFileLine: "~/formants.csv", resultLine$
+        appendInfoLine: resultLine$
         selectObject: textgrid
     endif
 endfor

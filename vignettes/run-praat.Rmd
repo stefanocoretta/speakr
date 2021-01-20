@@ -15,39 +15,132 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 library(tidyverse)
+theme_set(theme_dark())
 library(speakr)
 ```
 
-speakr allows the user to run a Praat script from within R with optional parameters. In combination with knitr and R MarkDown it is possible to generate dynamic reports with phonetic analyses.
+The package speakr allows the user to run a Praat script from within R, optionally passing paratmeters to the script if a form is used.
+In combination with rmarkdown::render(), it is possible to generate dynamic reports which include phonetic analyses.
 
-To load and attach the package:
+Load the package with:
 
 ```{r speakr, eval=FALSE}
 library(speakr)
 ```
 
-The function `praat_run()` is used to run a Praat script, and the first argument of the function is the path to the script including its name.
-If the script logs results to a file, the file is created in the same directory as the one of the script, as expected, and nothing is returned in R. To load the results file in R, just read it in as you would with any other dataset.
+## Run a Praat script
 
-If, on the other hand, the script logs output to the Info window (for example by using `writeInfo` in the script), you can specify the argument `capture = TRUE` to capture the argument into an R character variable. The outputted string can then be read in as a data frame or tibble.
+To run a Praat script, use the function `praat_run()`.
+The first argument of the function is the path to the script.
 
-The following example runs the script `get-formants.praat`, which requires two arguments, `"Herz"` and `0.03` (these will be passed to the `form` in the script). The script logs the results to the Info window with `appendInfoLine` so we use `capture = TRUE` here to transform the console output into a string and pipe it (`%>%`) to `read_csv()`.
+For example:
 
-```{r run}
-# system.file() is needed here because the example files reside in the package.
-# You can just include the file path directly in praat_run(), like 
-# praat_run("~/Desktop/script.praat")
+```{r run, eval=FALSE}
+script <- system.file("extdata", "play-greetings.praat", package = "speakr")
 
-script <- system.file("extdata", "get-formants.praat", package = "speakr")
-
-formants <- praat_run(script, "Hertz", 0.03, capture = TRUE) %>%
-  read_csv()
+praat_run(script)
 ```
 
-Let's have a look at the content `formants`.
+If the script has side effects, like creating new files or editing existing ones, these effects will take place.
+
+## File output
+
+If the script logs text (like a set of acoustic measurements) to a file (with `writeFile[Line]` and `appendFile[Line]`), the file is created in the directory specified in the script, and nothing is returned in R.
+To load the results file in R, just read it in as you would with any other dataset.
+
+The following runs a script that gets formant values and outputs a file with the formant measurements in your home folder.
+
+```{r run-file, eval=FALSE}
+script <- system.file("extdata", "get-formants.praat", package = "speakr")
+
+praat_run(script)
+```
+
+## Praat Info window output
+
+If, on the other hand, the script logs output to the Info window (with `writeInfo[Line]` and `appendInfo[Line]`), the output will be sent to the R console.
+
+```{r run-capt, eval=FALSE}
+script <- system.file("extdata", "get-formants-capt.praat", package = "speakr")
+
+# Output to R console
+praat_run(script)
+```
+
+```{r echo=FALSE}
+# Need this because code is not run in the vignette, since it relies on external software (Praat).
+formants <- read_lines(system.file("extdata", "formants.csv", package = "speakr"))
+cat(formants)
+```
+
+You can use `capture = TRUE` in `praat_run()` to capture the output and pass it to an R variable.
+The output will be a character string.
+
+```{r run-capt-var, eval=FALSE}
+# Output to R variable
+formants <- praat_run(script, capture = TRUE)
+cat(formants)
+```
+
+```{r echo=FALSE}
+# Need this because code is not run in the vignette, since it relies on external software (Praat).
+cat(formants)
+```
+
+Of course, you can redirect the captured output using the pipe `%>%`, for example to read the output as a tibble.
+
+```{r run-capt-tbl, eval=FALSE}
+library(tidyverse)
+# Output to R tibble
+formants <- praat_run(script, capture = TRUE) %>%
+  read_csv()
+class(formants)
+glimpse(formants)
+```
+
+```{r echo=FALSE}
+# Need this because code is not run in the vignette, since it relies on external software (Praat).
+f_tbl <- read_csv(formants)
+class(f_tbl)
+glimpse(f_tbl)
+```
+
+## Script arguments using Praat forms
+
+It is possible to pass arguments to the script from R, using Praat `form`s in the script.
+The following example runs the script `get-formants-args.praat`, which requires two arguments: unit (a string, either `"Hertz"` or `"Bark"`) and window size (a number).
+Multiple arguments can be specified in `praat_run()`, in the order in which they appear in the `form`.
+These arguments will be passed to the `form` in the script.
+
+```{r run-args}
+script <- system.file("extdata", "get-formants-args.praat", package = "speakr")
+
+unit = "Bark"
+window = 0.02
+
+formants <- praat_run(script, unit, window, capture = TRUE) %>%
+  read_csv()
+attr(formants, "args") <- list(unit = unit, window = window)
+```
+
+Let's have a look at `formants`.
 
 ```{r formants}
 formants
 ```
 
-If you want to see the contents of the script we used, run `praat_open(system.file("extdata", "get-formants.praat", package = "speakr"))`, which will open the script in Praat.
+And plot it.
+
+```{r formants-plot}
+formants %>%
+  ggplot(aes(F2, F1, label = vowel)) +
+  geom_label(size = 10) +
+  labs(
+    title = "Vowel plot",
+    x = "F2 (Bark)",
+    y = "F1 (Bark)"
+  ) +
+  scale_x_reverse(position = "top", limits = c(14, 7)) +
+  scale_y_reverse(position = "right", limits = c(8, 2))
+```
+
