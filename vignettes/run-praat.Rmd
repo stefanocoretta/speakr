@@ -112,27 +112,32 @@ The following example runs the script `get-formants-args.praat`, which requires 
 Multiple arguments can be specified in `praat_run()`, in the order in which they appear in the `form`.
 These arguments will be passed to the `form` in the script.
 
-```{r run-args}
+```{r run-args, eval=FALSE}
 script <- system.file("extdata", "get-formants-args.praat", package = "speakr")
 
 unit = "Bark"
 window = 0.02
 
-formants <- praat_run(script, unit, window, capture = TRUE) %>%
+f_bark <- praat_run(script, unit, window, capture = TRUE) %>%
   read_csv()
-attr(formants, "args") <- list(unit = unit, window = window)
+attr(f_bark, "args") <- list(unit = unit, window = window)
 ```
 
-Let's have a look at `formants`.
+```{r echo=FALSE}
+# Need this because code is not run in the vignette, since it relies on external software (Praat).
+f_bark <- read_csv(system.file("extdata", "formants-bark.csv", package = "speakr"))
+```
 
-```{r formants}
-formants
+Let's have a look at `f_bark`.
+
+```{r f-bark}
+f_bark
 ```
 
 And plot it.
 
-```{r formants-plot}
-formants %>%
+```{r f-bark-plot}
+f_bark %>%
   ggplot(aes(F2, F1, label = vowel)) +
   geom_label(size = 10) +
   labs(

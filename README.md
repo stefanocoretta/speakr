@@ -5,8 +5,8 @@
 
 <!-- badges: start -->
 
-[![](https://img.shields.io/badge/devel%20version-2.1.1.9000-blue.svg)](https://github.com/stefanocoretta/speakr)
-[![](https://img.shields.io/badge/devel%20version-2.1.1.9000-orange.svg)](https://github.com/stefanocoretta/speakr)
+[![](https://img.shields.io/badge/devel%20version-3.0.0-blue.svg)](https://github.com/stefanocoretta/speakr)
+[![](https://img.shields.io/badge/devel%20version-3.0.0-orange.svg)](https://github.com/stefanocoretta/speakr)
 <!-- badges: end -->
 
 With speakr, you can run Praat scripts in R and capture their `infoLine`
@@ -43,7 +43,7 @@ Everything is set in the Praat script as usual, so you don’t have to
 learn a new language to perform tasks you already know how to perform.
 
 ``` r
-script <- system.file("extdata", "get-formants.praat", package = "speakr")
+script <- system.file("extdata", "get-formants-args.praat", package = "speakr")
 
 formants <- praat_run(script, "Hertz", 0.03, capture = TRUE) %>%
   read_csv()

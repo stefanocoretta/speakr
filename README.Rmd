@@ -53,7 +53,7 @@ Use `prat_run()` to run a Praat script, and `capture = TRUE` to capture the outp
 Everything is set in the Praat script as usual, so you don't have to learn a new language to perform tasks you already know how to perform.
 
 ```{r run-script}
-script <- system.file("extdata", "get-formants.praat", package = "speakr")
+script <- system.file("extdata", "get-formants-args.praat", package = "speakr")
 
 formants <- praat_run(script, "Hertz", 0.03, capture = TRUE) %>%
   read_csv()
