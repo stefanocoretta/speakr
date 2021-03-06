@@ -4,11 +4,11 @@
 \name{speakr-package}
 \alias{speakr}
 \alias{speakr-package}
-\title{speakr: A Wrapper for the Phonetic Software Praat}
+\title{speakr: A Wrapper for the Phonetic Software 'Praat'}
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-It allows running Praat scripts from R and it provides some
+It allows running 'Praat' scripts from R and it provides some
     wrappers for basic plotting. It also adds support for literate markdown
     tangling. The package is designed to bring reproducible phonetic research
     into R.

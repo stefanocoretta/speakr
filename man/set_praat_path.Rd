@@ -2,12 +2,12 @@
 % Please edit documentation in R/paths.R
 \name{set_praat_path}
 \alias{set_praat_path}
-\title{Set path to Praat.}
+\title{Set path to 'Praat'.}
 \usage{
 set_praat_path(path, default.path = FALSE)
 }
 \arguments{
-\item{path}{The path to the Praat executable.}
+\item{path}{The path to the 'Praat' executable.}
 
 \item{default.path}{If \code{TRUE}, the path is set to what \code{praatPath}
 returns.}
@@ -16,6 +16,6 @@ returns.}
 Nothing. It is used for its side effects.
 }
 \description{
-It assigns the default path to Praat or the user assigned path (when
+It assigns the default path to 'Praat' or the user assigned path (when
     \code{default.path = FALSE}, which is the default).
 }

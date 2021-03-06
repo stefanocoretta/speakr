@@ -2,7 +2,7 @@
 % Please edit documentation in R/praat.R
 \name{start_praat}
 \alias{start_praat}
-\title{Start Praat.}
+\title{Start 'Praat'.}
 \usage{
 start_praat()
 }
@@ -10,7 +10,7 @@ start_praat()
 Nothing. Used for its side effects.
 }
 \description{
-It opens the Praat GUI.
+It opens the 'Praat' GUI.
 }
 \examples{
 \dontrun{

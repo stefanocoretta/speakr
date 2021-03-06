@@ -2,7 +2,7 @@
 % Please edit documentation in R/praat.R
 \name{praat_run}
 \alias{praat_run}
-\title{Run a Praat script.}
+\title{Run a 'Praat' script.}
 \usage{
 praat_run(script, ..., capture = FALSE)
 }
@@ -16,12 +16,12 @@ example, from \code{writeInfo}) can be saved into a variable in R. If
 \code{FALSE} (the default) the output is logged to the console.}
 }
 \value{
-If the Praat script returns standard output this is returned as a
+If the 'Praat' script returns standard output this is returned as a
   character vector. Also, if the script has instructions to create files,
   these will be created.
 }
 \description{
-It runs a Praat script, with optional arguments passed to the script.
+It runs a 'Praat' script, with optional arguments passed to the script.
 }
 \examples{
 \dontrun{

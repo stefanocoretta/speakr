@@ -2,15 +2,15 @@
 % Please edit documentation in R/paths.R
 \name{praat_path}
 \alias{praat_path}
-\title{Get system path to Praat.}
+\title{Get system path to 'Praat'.}
 \usage{
 praat_path()
 }
 \value{
-The path to the Praat executable.
+The path to the 'Praat' executable.
 }
 \description{
-The function returns the path to the Praat executable depending on the
+The function returns the path to the 'Praat' executable depending on the
     system.
 }
 \keyword{internal}

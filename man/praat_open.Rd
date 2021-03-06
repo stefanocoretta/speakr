@@ -2,7 +2,7 @@
 % Please edit documentation in R/praat.R
 \name{praat_open}
 \alias{praat_open}
-\title{Open files with Praat.}
+\title{Open files with 'Praat'.}
 \usage{
 praat_open(...)
 }
@@ -14,7 +14,7 @@ arguments to open multiple files.}
 Nothing. Used for its side effects.
 }
 \description{
-It opens a file or list of files in the Praat GUI.
+It opens a file or list of files in the 'Praat' GUI.
 }
 \examples{
 \dontrun{

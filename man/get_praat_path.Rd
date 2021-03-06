@@ -2,13 +2,13 @@
 % Please edit documentation in R/paths.R
 \name{get_praat_path}
 \alias{get_praat_path}
-\title{Print path to Praat.}
+\title{Print path to 'Praat'.}
 \usage{
 get_praat_path()
 }
 \value{
-A character vector with the Praat path.
+A character vector with the 'Praat' path.
 }
 \description{
-It prints the path to Praat on the console for inspection.
+It prints the path to 'Praat' on the console for inspection.
 }
