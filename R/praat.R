@@ -1,6 +1,6 @@
-#' Start Praat.
+#' Start 'Praat'.
 #'
-#' It opens the Praat GUI.
+#' It opens the 'Praat' GUI.
 #'
 #' @return Nothing. Used for its side effects.
 #'
@@ -15,9 +15,9 @@ start_praat <- function() {
     system2(pkg.env$praat.path, wait = FALSE)
 }
 
-#' Open files with Praat.
+#' Open files with 'Praat'.
 #'
-#' It opens a file or list of files in the Praat GUI.
+#' It opens a file or list of files in the 'Praat' GUI.
 #'
 #' @param ... A character vector with the path to the file. Include multiple vector
 #'   arguments to open multiple files.
@@ -43,9 +43,9 @@ praat_open <- function(...) {
     system2(pkg.env$praat.path, c("--open", list(...)), wait = FALSE)
 }
 
-#' Run a Praat script.
+#' Run a 'Praat' script.
 #'
-#' It runs a Praat script, with optional arguments passed to the script.
+#' It runs a 'Praat' script, with optional arguments passed to the script.
 #'
 #' @param script A character vector containing the script name.
 #' @param ... List of arguments to be passed to the script.
@@ -53,7 +53,7 @@ praat_open <- function(...) {
 #'   example, from \code{writeInfo}) can be saved into a variable in R. If
 #'   \code{FALSE} (the default) the output is logged to the console.
 #'
-#' @return If the Praat script returns standard output this is returned as a
+#' @return If the 'Praat' script returns standard output this is returned as a
 #'   character vector. Also, if the script has instructions to create files,
 #'   these will be created.
 #'

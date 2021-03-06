@@ -1,9 +1,9 @@
-#' Get system path to Praat.
+#' Get system path to 'Praat'.
 #'
-#' The function returns the path to the Praat executable depending on the
+#' The function returns the path to the 'Praat' executable depending on the
 #'     system.
 #'
-#' @return The path to the Praat executable.
+#' @return The path to the 'Praat' executable.
 #'
 #' @keywords internal
 praat_path <- function() {
@@ -18,12 +18,12 @@ praat_path <- function() {
     }
 }
 
-#' Set path to Praat.
+#' Set path to 'Praat'.
 #'
-#' It assigns the default path to Praat or the user assigned path (when
+#' It assigns the default path to 'Praat' or the user assigned path (when
 #'     \code{default.path = FALSE}, which is the default).
 #'
-#' @param path The path to the Praat executable.
+#' @param path The path to the 'Praat' executable.
 #' @param default.path If \code{TRUE}, the path is set to what \code{praatPath}
 #' returns.
 #'
@@ -38,11 +38,11 @@ set_praat_path <- function(path, default.path = FALSE) {
     }
 }
 
-#' Print path to Praat.
+#' Print path to 'Praat'.
 #'
-#' It prints the path to Praat on the console for inspection.
+#' It prints the path to 'Praat' on the console for inspection.
 #'
-#' @return A character vector with the Praat path.
+#' @return A character vector with the 'Praat' path.
 #'
 #' @export
 get_praat_path <- function() {
