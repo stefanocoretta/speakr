@@ -5,8 +5,8 @@
 
 <!-- badges: start -->
 
-[![](https://img.shields.io/badge/devel%20version-3.0.0-blue.svg)](https://github.com/stefanocoretta/speakr)
-[![](https://img.shields.io/badge/devel%20version-3.0.0-orange.svg)](https://github.com/stefanocoretta/speakr)
+[![](https://img.shields.io/badge/devel%20version-3.0.0.9000-blue.svg)](https://github.com/stefanocoretta/speakr)
+[![](https://img.shields.io/badge/devel%20version-3.0.0.9000-orange.svg)](https://github.com/stefanocoretta/speakr)
 <!-- badges: end -->
 
 With speakr, you can run Praat scripts in R and capture their `infoLine`
