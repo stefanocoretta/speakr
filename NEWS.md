@@ -1,13 +1,22 @@
+# speakr 3.0.0.9000 (development version)
+
+## Fixed
+
+* Now the path to Praat is set on load and calls to the package namespace with `::` will work (closes #5).
+
+
 # speakr 3.0.0
 
 ## Added
 
 * 🎉 Use pkgdown!
+
 * 🎉 Add logo!
 
 ## Changed
 
 * Use `usethis::use_package_doc()`.
+
 * 📝 Various updates to the documentation.
 
 ## Removed
