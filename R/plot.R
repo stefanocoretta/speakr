@@ -3,21 +3,23 @@
 #' @param file
 #' @param wav
 #' @param tg
+#' @param width
+#' @param height
+#' @param pitch
 #'
 #' @return
 #' @export
 #'
 #' @examples
-praat_plot <- function(file, wav, tg = NULL, width = 5, height = 3, pitch = NULL) {
+praat_plot <- function(file, wav, tg = NULL, start = 0, end = NULL, width = 5, pitch = NULL) {
   wd <- getwd()
   file <- file.path(wd, file)
   wav <- normalizePath(wav)
-  plot_script <- system.file("extdata", "plot-wav-tg.praat", package = "speakr")
+  plot_script <- system.file("extdata", "plot.praat", package = "speakr")
 
   if (is.null(tg)) {
     tg_path <- stringr::str_remove(wav, ".wav$")
     tg_path <- stringr::str_glue(tg_path, ".TextGrid")
-    tg_path <- file.path(wd, tg_path)
 
     if (file.exists(tg_path)) {
       tg <- tg_path
@@ -32,5 +34,9 @@ praat_plot <- function(file, wav, tg = NULL, width = 5, height = 3, pitch = NULL
     pitch <- "TRUE"
   }
 
-  praat_run(plot_script, wav, tg, file, width, height, pitch)
+  if (is.null(end)) {
+    end <- 0
+  }
+
+  praat_run(plot_script, file, wav, tg, start, end, width, pitch)
 }
