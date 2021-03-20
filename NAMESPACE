@@ -2,6 +2,7 @@
 
 export(get_praat_path)
 export(praat_open)
+export(praat_plot)
 export(praat_run)
 export(set_praat_path)
 export(start_praat)
