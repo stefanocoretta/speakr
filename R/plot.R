@@ -14,7 +14,10 @@
 #' @return Nothing. It is used for its side effects.
 #' @export
 #'
-praat_plot <- function(file, wav, tg = NULL, start = 0, end = NULL, width = 5, f0 = FALSE) {
+praat_plot <- function(
+  file, wav, tg = NULL, start = 0, end = NULL, width = 5, format = "png",
+  f0 = FALSE, f0_min = 0, f0_max = 500
+) {
   wd <- getwd()
   file <- file.path(wd, file)
   wav <- normalizePath(wav)
@@ -32,14 +35,14 @@ praat_plot <- function(file, wav, tg = NULL, start = 0, end = NULL, width = 5, f
   }
 
   if (f0) {
-    pitch <- "TRUE"
+    f0 <- "TRUE"
   } else {
-    pitch <- "FALSE"
+    f0 <- "FALSE"
   }
 
   if (is.null(end)) {
     end <- 0
   }
 
-  praat_run(plot_script, file, wav, tg, start, end, width, pitch)
+  praat_run(plot_script, file, wav, tg, start, end, width, format, f0, f0_min, f0_max)
 }
