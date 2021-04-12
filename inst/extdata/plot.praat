@@ -10,6 +10,7 @@ form Select data
   sentence pitch FALSE
   real pitch_min 0
   real pitch_max 500
+  real hz_max 5000
 endform
 
 win_width = width - (0.7 * 2)
@@ -41,7 +42,7 @@ endif
 # To objects ########################################################
 
 selectObject: wav
-sp = To Spectrogram: 0.005, 5000, 0.002, 20, "Gaussian"
+sp = To Spectrogram: 0.005, hz_max, 0.002, 20, "Gaussian"
 
 if pitch$ != "FALSE"
   selectObject: wav
@@ -52,7 +53,7 @@ endif
 
 Erase all
 
-10
+Font size: 8
 Helvetica
 
 # Plot ##############################################################
@@ -96,11 +97,19 @@ Silver
 Draw: start, end, 0, 0, "no", "Curve"
 Black
 
+int_min = Get minimum: start, end, "sinc70"
+int_max = Get maximum: start, end, "sinc70"
+
+Axes: start, end, int_min, int_max
+One mark right: int_min, "no", "yes", "no", fixed$(int_min, 2)
+One mark right: 0, "yes", "yes", "yes", ""
+One mark right: int_max, "no", "yes", "no", fixed$(int_max, 2)
+
 Select inner viewport: 0, win_width, wav_height, wav_height + sp_height
 
-Axes: start, end, 0, 5000
+Axes: start, end, 0, hz_max
 Marks left: 2, "yes", "yes", "no"
-Text left: "no", "Freq. (Hz)"
+Text left: "no", "Hz"
 
 Select inner viewport: 0, win_width, 0, inner_height
 

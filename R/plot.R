@@ -9,14 +9,18 @@
 #' @param end End time of the plotting window in seconds. If `NULL` (the
 #'   default), plot the entire duration.
 #' @param width Width of the plot in inches.
+#' @param format Output file format (`png` by default, or `pdf`).
 #' @param f0 Whether to plot f0 (`FALSE` by default).
+#' @param f0_min If `f0 = TRUE`, minimum f0 value (`0` by default).
+#' @param f0_max If `f0 = TRUE`, maximum f0 value (`500` by default).
+#' @param spec_max Maximum frequency for the spectrogram (`5000` by default).
 #'
 #' @return Nothing. It is used for its side effects.
 #' @export
 #'
 praat_plot <- function(
   file, wav, tg = NULL, start = 0, end = NULL, width = 5, format = "png",
-  f0 = FALSE, f0_min = 0, f0_max = 500
+  f0 = FALSE, f0_min = 0, f0_max = 500, spec_max = 5000
 ) {
   wd <- getwd()
   file <- file.path(wd, file)
@@ -44,5 +48,5 @@ praat_plot <- function(
     end <- 0
   }
 
-  praat_run(plot_script, file, wav, tg, start, end, width, format, f0, f0_min, f0_max)
+  praat_run(plot_script, file, wav, tg, start, end, width, format, f0, f0_min, f0_max, spec_max)
 }

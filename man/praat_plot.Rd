@@ -4,7 +4,19 @@
 \alias{praat_plot}
 \title{Plot waveform and spectrogram}
 \usage{
-praat_plot(file, wav, tg = NULL, start = 0, end = NULL, width = 5, f0 = FALSE)
+praat_plot(
+  file,
+  wav,
+  tg = NULL,
+  start = 0,
+  end = NULL,
+  width = 5,
+  format = "png",
+  f0 = FALSE,
+  f0_min = 0,
+  f0_max = 500,
+  spec_max = 5000
+)
 }
 \arguments{
 \item{file}{Output file path as a string.}
@@ -22,7 +34,15 @@ default), plot the entire duration.}
 
 \item{width}{Width of the plot in inches.}
 
+\item{format}{Output file format (`png` by default, or `pdf`).}
+
 \item{f0}{Whether to plot f0 (`FALSE` by default).}
+
+\item{f0_min}{If `f0 = TRUE`, minimum f0 value (`0` by default).}
+
+\item{f0_max}{If `f0 = TRUE`, maximum f0 value (`500` by default).}
+
+\item{spec_max}{Maximum frequency for the spectrogram (`5000` by default).}
 }
 \value{
 Nothing. It is used for its side effects.
