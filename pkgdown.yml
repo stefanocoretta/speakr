@@ -2,6 +2,7 @@ pandoc: 2.7.3
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
+  praat-plot: praat-plot.html
   run-praat: run-praat.html
-last_built: 2021-03-19T15:30Z
+last_built: 2021-04-17T16:36Z
 

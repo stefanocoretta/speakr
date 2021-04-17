@@ -22,7 +22,7 @@
   }
 </script>
 
-<title>Set path to 'Praat'. — set_praat_path • speakr</title>
+<title>Plot waveform and spectrogram — praat_plot • speakr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -72,9 +72,8 @@
 
 
 
-<meta property="og:title" content="Set path to 'Praat'. — set_praat_path" />
-<meta property="og:description" content="It assigns the default path to 'Praat' or the user assigned path (when
-    default.path = FALSE, which is the default)." />
+<meta property="og:title" content="Plot waveform and spectrogram — praat_plot" />
+<meta property="og:description" content="Plot waveform and spectrogram" />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -169,29 +168,78 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Set path to 'Praat'.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/stefanocoretta/speakr/blob/master/R/paths.R'><code>R/paths.R</code></a></small>
-    <div class="hidden name"><code>set_praat_path.Rd</code></div>
+    <h1>Plot waveform and spectrogram</h1>
+    <small class="dont-index">Source: <a href='https://github.com/stefanocoretta/speakr/blob/master/R/plot.R'><code>R/plot.R</code></a></small>
+    <div class="hidden name"><code>praat_plot.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>It assigns the default path to 'Praat' or the user assigned path (when
-    <code>default.path = FALSE</code>, which is the default).</p>
+    <p>Plot waveform and spectrogram</p>
     </div>
 
-    <pre class="usage"><span class='fu'>set_praat_path</span><span class='op'>(</span><span class='va'>path</span>, default.path <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>praat_plot</span><span class='op'>(</span>
+  <span class='va'>file</span>,
+  <span class='va'>wav</span>,
+  tg <span class='op'>=</span> <span class='cn'>NULL</span>,
+  start <span class='op'>=</span> <span class='fl'>0</span>,
+  end <span class='op'>=</span> <span class='cn'>NULL</span>,
+  width <span class='op'>=</span> <span class='fl'>5</span>,
+  format <span class='op'>=</span> <span class='st'>"png"</span>,
+  f0 <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  f0_min <span class='op'>=</span> <span class='fl'>0</span>,
+  f0_max <span class='op'>=</span> <span class='fl'>500</span>,
+  spec_max <span class='op'>=</span> <span class='fl'>5000</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>path</th>
-      <td><p>The path to the 'Praat' executable.</p></td>
+      <th>file</th>
+      <td><p>Output file path as a string.</p></td>
     </tr>
     <tr>
-      <th>default.path</th>
-      <td><p>If <code>TRUE</code>, the path is set to what <code>praatPath</code>
-returns.</p></td>
+      <th>wav</th>
+      <td><p>Wav file path as a string.</p></td>
+    </tr>
+    <tr>
+      <th>tg</th>
+      <td><p>TextGrid file path as a string. If `NULL` (the default), a TextGrid
+is plotted if a TextGrid file with the same name as the wav file is found.
+No TextGrid is plotted otherwise.</p></td>
+    </tr>
+    <tr>
+      <th>start</th>
+      <td><p>Start time of the plotting window in seconds.</p></td>
+    </tr>
+    <tr>
+      <th>end</th>
+      <td><p>End time of the plotting window in seconds. If `NULL` (the
+default), plot the entire duration.</p></td>
+    </tr>
+    <tr>
+      <th>width</th>
+      <td><p>Width of the plot in inches.</p></td>
+    </tr>
+    <tr>
+      <th>format</th>
+      <td><p>Output file format (`png` by default, or `pdf`).</p></td>
+    </tr>
+    <tr>
+      <th>f0</th>
+      <td><p>Whether to plot f0 (`FALSE` by default).</p></td>
+    </tr>
+    <tr>
+      <th>f0_min</th>
+      <td><p>If `f0 = TRUE`, minimum f0 value (`0` by default).</p></td>
+    </tr>
+    <tr>
+      <th>f0_max</th>
+      <td><p>If `f0 = TRUE`, maximum f0 value (`500` by default).</p></td>
+    </tr>
+    <tr>
+      <th>spec_max</th>
+      <td><p>Maximum frequency for the spectrogram (`5000` by default).</p></td>
     </tr>
     </table>
 
@@ -199,6 +247,13 @@ returns.</p></td>
 
     <p>Nothing. It is used for its side effects.</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='va'>wav</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>"extdata"</span>, <span class='st'>"vowels.wav"</span>, package <span class='op'>=</span> <span class='st'>"speakr"</span><span class='op'>)</span>
+
+<span class='fu'>praat_plot</span><span class='op'>(</span><span class='st'>"vowels.png"</span>, <span class='va'>wav</span>, f0 <span class='op'>=</span> <span class='cn'>TRUE</span>, f0_max <span class='op'>=</span> <span class='fl'>200</span>, end <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

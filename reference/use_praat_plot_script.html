@@ -22,7 +22,7 @@
   }
 </script>
 
-<title>Set path to 'Praat'. — set_praat_path • speakr</title>
+<title>Use Praat plotting script — use_praat_plot_script • speakr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -72,9 +72,9 @@
 
 
 
-<meta property="og:title" content="Set path to 'Praat'. — set_praat_path" />
-<meta property="og:description" content="It assigns the default path to 'Praat' or the user assigned path (when
-    default.path = FALSE, which is the default)." />
+<meta property="og:title" content="Use Praat plotting script — use_praat_plot_script" />
+<meta property="og:description" content="This allows the user to save a copy of the Praat plotting script on disk so
+that they can make changes and customise the plot." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -169,29 +169,28 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Set path to 'Praat'.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/stefanocoretta/speakr/blob/master/R/paths.R'><code>R/paths.R</code></a></small>
-    <div class="hidden name"><code>set_praat_path.Rd</code></div>
+    <h1>Use Praat plotting script</h1>
+    <small class="dont-index">Source: <a href='https://github.com/stefanocoretta/speakr/blob/master/R/plot.R'><code>R/plot.R</code></a></small>
+    <div class="hidden name"><code>use_praat_plot_script.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>It assigns the default path to 'Praat' or the user assigned path (when
-    <code>default.path = FALSE</code>, which is the default).</p>
+    <p>This allows the user to save a copy of the Praat plotting script on disk so
+that they can make changes and customise the plot.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>set_praat_path</span><span class='op'>(</span><span class='va'>path</span>, default.path <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>use_praat_plot_script</span><span class='op'>(</span><span class='va'>file</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>path</th>
-      <td><p>The path to the 'Praat' executable.</p></td>
+      <th>file</th>
+      <td><p>Path including file name to which the script is copied.</p></td>
     </tr>
     <tr>
-      <th>default.path</th>
-      <td><p>If <code>TRUE</code>, the path is set to what <code>praatPath</code>
-returns.</p></td>
+      <th>...</th>
+      <td><p>Further arguments passed to <code><a href='https://rdrr.io/r/base/files.html'>file.copy</a></code>.</p></td>
     </tr>
     </table>
 
