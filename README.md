@@ -5,8 +5,8 @@
 
 <!-- badges: start -->
 
-[![](https://img.shields.io/badge/devel%20version-3.0.0.9000-blue.svg)](https://github.com/stefanocoretta/speakr)
-[![](https://img.shields.io/badge/devel%20version-3.0.0.9000-orange.svg)](https://github.com/stefanocoretta/speakr)
+[![](https://img.shields.io/badge/devel%20version-3.1.0-blue.svg)](https://github.com/stefanocoretta/speakr)
+[![](https://img.shields.io/badge/devel%20version-3.1.0-orange.svg)](https://github.com/stefanocoretta/speakr)
 <!-- badges: end -->
 
 With speakr, you can run Praat scripts in R and capture their `infoLine`
@@ -80,3 +80,24 @@ formants %>%
 ```
 
 <img src="man/figures/README-vowel-plot-1.png" width="100%" />
+
+## Simple plotting utility
+
+You can plot a sound file and TextGrid using Praat’s plotting
+facilities.
+
+``` r
+wav <- system.file("extdata", "vowels.wav", package = "speakr")
+
+praat_plot("vowels.png", wav, f0 = T, f0_max = 200, end = 3)
+```
+
+You can include the plot in an Rmarkdown file with knitr.
+
+``` r
+fig <- system.file("extdata", "vowels.png", package = "speakr")
+
+knitr::include_graphics(fig)
+```
+
+<img src="/Users/ste/repos/speakr/renv/library/R-4.0/x86_64-apple-darwin17.0/speakr/extdata/vowels.png" width="100%" />

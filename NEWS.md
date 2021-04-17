@@ -1,4 +1,4 @@
-# speakr 3.0.0.9000 (development version)
+# speakr 3.1.0
 
 ## Added
 

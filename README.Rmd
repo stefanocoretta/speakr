@@ -81,3 +81,21 @@ formants %>%
   coord_fixed()
 ```
 
+## Simple plotting utility
+
+You can plot a sound file and TextGrid using Praat's plotting facilities.
+
+```{r plotting, eval=FALSE}
+wav <- system.file("extdata", "vowels.wav", package = "speakr")
+
+praat_plot("vowels.png", wav, f0 = T, f0_max = 200, end = 3)
+```
+
+You can include the plot in an Rmarkdown file with knitr.
+
+```{r fig}
+fig <- system.file("extdata", "vowels.png", package = "speakr")
+
+knitr::include_graphics(fig)
+```
+
