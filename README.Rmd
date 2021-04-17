@@ -94,8 +94,6 @@ praat_plot("vowels.png", wav, f0 = T, f0_max = 200, end = 3)
 You can include the plot in an Rmarkdown file with knitr.
 
 ```{r fig}
-fig <- system.file("extdata", "vowels.png", package = "speakr")
-
-knitr::include_graphics(fig)
+knitr::include_graphics("man/figures/vowels.png")
 ```
 
