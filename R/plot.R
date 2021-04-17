@@ -18,6 +18,12 @@
 #' @return Nothing. It is used for its side effects.
 #' @export
 #'
+#' @examples
+#' \dontrun{
+#' wav <- system.file("extdata", "vowels.wav", package = "speakr")
+#'
+#' praat_plot("vowels.png", wav, f0 = TRUE, f0_max = 200, end = 3)
+#' }
 praat_plot <- function(
   file, wav, tg = NULL, start = 0, end = NULL, width = 5, format = "png",
   f0 = FALSE, f0_min = 0, f0_max = 500, spec_max = 5000
@@ -49,4 +55,20 @@ praat_plot <- function(
   }
 
   praat_run(plot_script, file, wav, tg, start, end, width, format, f0, f0_min, f0_max, spec_max)
+}
+
+
+#' Use Praat plotting script
+#'
+#' This allows the user to save a copy of the Praat plotting script on disk so
+#' that they can make changes and customise the plot.
+#'
+#' @param file Path including file name to which the script is copied.
+#' @param ... Further arguments passed to \code{\link[base]{file.copy}}.
+#'
+#' @return Nothing. It is used for its side effects.
+#' @export
+use_praat_plot_script <- function(file, ...) {
+  plot_script <- system.file("extdata", "plot.praat", package = "speakr")
+  file.copy(plot_script, file, ...)
 }

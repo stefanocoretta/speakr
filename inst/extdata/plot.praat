@@ -1,21 +1,33 @@
 form Select data
-  comment Set path to wav audio file and TextGrid:
+  comment Output file name:
   sentence file plot.png
+  comment Set path to wav audio file and TextGrid:
   sentence wav ~/
   sentence tg ~/
+  comment Start and end time to be plotted:
   real start 0
   real end 0
+  comment Output file settings:
   positive width 5
   sentence format png
+  comment Include f0 track?
   sentence pitch FALSE
+  comment f0 minimum and maximum:
   real pitch_min 0
   real pitch_max 500
+  comment Hz maximum:
   real hz_max 5000
 endform
 
+# Set dimensions ####################################################
+# All dimensions are in inches.
+
+# Width and height of the plotting window (not of the whole plot).
 win_width = width - (0.7 * 2)
 win_height = 2
+# Height of the waveform panel.
 wav_height = 0.5
+# Height of the spectrogram panel.
 sp_height = 1.5
 
 # Read files ########################################################
@@ -26,6 +38,7 @@ if end == 0
   end = Get end time
 endif
 
+# Set plotting window dimensions if f0 will be included.
 if pitch$ != "FALSE"
   pitch_height = 0.25
   sp_height = sp_height - 0.25
@@ -33,6 +46,7 @@ else
   pitch_height = 0
 endif
 
+# Set plotting window dimensions if textgrid will be included.
 if tg$ != "FALSE"
   tg = Read from file: tg$
   tg_tiers = Get number of tiers
@@ -58,11 +72,15 @@ Helvetica
 
 # Plot ##############################################################
 
+### Spectrogram #####################################################
+
 Select inner viewport: 0, win_width, wav_height, wav_height + sp_height
 
 selectObject: sp
 Paint: start, end, 0, 0, 100, "no", 70, 6, 0, "no"
 Draw inner box
+
+### f0 track ########################################################
 
 if pitch$ != "FALSE"
   Select inner viewport: 0, win_width, wav_height + sp_height, wav_height + sp_height + pitch_height
@@ -77,9 +95,13 @@ if pitch$ != "FALSE"
   Marks right: 2, "yes", "yes", "no"
 endif
 
+### Spectrogram box #################################################
+
 Select inner viewport: 0, win_width, wav_height, wav_height + sp_height
 
 Draw inner box
+
+### TextGrid ########################################################
 
 if tg$ != "FALSE"
   Select inner viewport: 0, win_width, 0, tg_height
@@ -90,12 +112,16 @@ else
   inner_height = win_height
 endif
 
+### Waveform ########################################################
+
 Select inner viewport: 0, win_width, 0, wav_height
 
 selectObject: wav
 Silver
 Draw: start, end, 0, 0, "no", "Curve"
 Black
+
+### Axes ############################################################
 
 int_min = Get minimum: start, end, "sinc70"
 int_max = Get maximum: start, end, "sinc70"
@@ -116,6 +142,8 @@ Select inner viewport: 0, win_width, 0, inner_height
 Draw inner box
 Marks bottom every: 1, 1, "yes", "yes", "no"
 Text bottom: "yes", "Time (s)"
+
+### Select plot and save ###########################################
 
 Select inner viewport: 0, win_width, 0, inner_height
 

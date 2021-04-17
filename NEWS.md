@@ -1,5 +1,13 @@
 # speakr 3.0.0.9000 (development version)
 
+## Added
+
+* `praat_plot()` to plot waveforms and specrograms with the Praat plotting facilities.
+
+* `use_praat_plot_script()` to save a copy of the Praat plotting script on disk.
+
+* `praat-plot.Rmd` vignette.
+
 ## Fixed
 
 * Now the path to Praat is set on load and calls to the package namespace with `::` will work (closes #5).

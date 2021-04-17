@@ -1,0 +1,66 @@
+---
+title: "Plot with Praat"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Plot with Praat}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  eval = FALSE
+)
+library(tidyverse)
+theme_set(theme_dark())
+library(speakr)
+```
+
+With `praat_plot()`, you can create plots of the waveform and spectrogram of a sound file, and add annotation from a TextGrid file.
+
+Start by loading the package if you haven't already.
+
+```{r speakr, eval=FALSE}
+library(speakr)
+```
+
+## Basic plot
+
+The minimal plot includes a waveform and a spectrogram of a sound file.
+
+```{r basic}
+# The sound file.
+wav <- system.file("extdata", "vowels.wav", package = "speakr")
+
+praat_plot("vowels.png", wav, end = 3, tg = FALSE)
+```
+
+## Plot with TextGrid
+
+You can include annotation from a TextGrid file.
+You can specify the path to the TextGrid with the `tg` argument.
+If `tg` is set to `NULL` (the default) the function will search for a TextGrid file with the same base name as the wav file, and if it finds one it will add it to the plot.
+
+```{r tg}
+praat_plot("vowels-tg.png", wav, end = 3, tg = NULL)
+```
+
+## f0 track 
+
+You can add a track of f0 by setting `f0 = TRUE`.
+
+```{r tg-f0}
+praat_plot("vowels-tg-f0.png", wav, end = 3, tg = NULL, f0 = TRUE)
+```
+
+## Further customisation
+
+Due to the extreme flexibility of the Praat plotting facilities, it is not that straightforward to include all the possible parameters in a single function.
+
+If you would like to customise the plot further, you can run `use_praat_plot_script("plot.praat")` which will copy the Praat plotting script used in `praat_plot()` on disk (in the path you specify in the function), so that you can make any changes to the script and then run it with `praat_run()` as you would with any other Praat script.
+
+## Include plots in Rmarkdown
+
+To include a plot created with `praat_plot()` you can use `knitr::include_graphics("your-plot.png")`.

@@ -50,3 +50,10 @@ Nothing. It is used for its side effects.
 \description{
 Plot waveform and spectrogram
 }
+\examples{
+\dontrun{
+wav <- system.file("extdata", "vowels.wav", package = "speakr")
+
+praat_plot("vowels.png", wav, f0 = TRUE, f0_max = 200, end = 3)
+}
+}
