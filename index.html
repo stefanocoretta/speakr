@@ -184,10 +184,8 @@
 <span class="fu"><a href="reference/praat_plot.html">praat_plot</a></span><span class="op">(</span><span class="st">"vowels.png"</span>, <span class="va">wav</span>, f0 <span class="op">=</span> <span class="cn">T</span>, f0_max <span class="op">=</span> <span class="fl">200</span>, end <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></code></pre></div>
 <p>You can include the plot in an Rmarkdown file with knitr.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">fig</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"vowels.png"</span>, package <span class="op">=</span> <span class="st">"speakr"</span><span class="op">)</span>
-
-<span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">include_graphics</a></span><span class="op">(</span><span class="va">fig</span><span class="op">)</span></code></pre></div>
-<p><img src="/Users/ste/repos/speakr/renv/library/R-4.0/x86_64-apple-darwin17.0/speakr/extdata/vowels.png" width="100%"></p>
+<code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">include_graphics</a></span><span class="op">(</span><span class="st">"man/figures/vowels.png"</span><span class="op">)</span></code></pre></div>
+<p><img src="reference/figures/vowels.png" width="100%"></p>
 </div>
 </div>
   </div>
