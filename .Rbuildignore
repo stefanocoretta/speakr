@@ -3,7 +3,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^README\.md$
-^NEWS\.md$
 ^speakr.sublime-*
 ^README\.Rmd$
 ^\.github$
