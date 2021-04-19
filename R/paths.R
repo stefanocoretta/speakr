@@ -14,37 +14,44 @@ praat_path <- function() {
     } else if (sysname == "Linux") {
         return("/usr/bin/praat")
     } else if (sysname == "Windows") {
-        return(normalizePath("C:/Program Files/Praat.exe"))
+        return(normalizePath("C:/Program Files/Praat.exe", mustWork = FALSE))
     }
 }
 
 #' Set path to 'Praat'.
 #'
-#' It assigns the default path to 'Praat' or the user assigned path (when
-#'     \code{default.path = FALSE}, which is the default).
+#' @description
+#' `r lifecycle::badge("deprecated")`
 #'
-#' @param path The path to the 'Praat' executable.
-#' @param default.path If \code{TRUE}, the path is set to what \code{praatPath}
-#' returns.
+#' Now speakr uses options() to set the path to 'Praat'.
 #'
-#' @return Nothing. It is used for its side effects.
-#'
-#' @export
+#' @keywords internal
 set_praat_path <- function(path, default.path = FALSE) {
+    lifecycle::deprecate_warn(
+       "3.1.0",
+       "set_praat_path()",
+       details = "Please use `options('speakr.praat.path')` instead."
+    )
     if (default.path == FALSE) {
-        pkg.env$praat.path <- path
+        options(speakr.praat.path = path)
     } else {
-        pkg.env$praat.path <- praat_path()
+        options(speakr.praat.path = praat_path())
     }
 }
 
 #' Print path to 'Praat'.
 #'
-#' It prints the path to 'Praat' on the console for inspection.
+#' @description
+#' `r lifecycle::badge("deprecated")`
 #'
-#' @return A character vector with the 'Praat' path.
+#' Now speakr uses options() to set the path to 'Praat'.
 #'
-#' @export
+#' @keywords internal
 get_praat_path <- function() {
-    return(pkg.env$praat.path)
+    lifecycle::deprecate_warn(
+        "3.1.0",
+        "set_praat_path()",
+        details = "Please use `options(speakr.praat.path = './praat')` instead."
+    )
+    return(getOption("speakr.praat.path"))
 }

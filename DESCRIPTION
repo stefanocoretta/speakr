@@ -15,6 +15,7 @@ BugReports: https://github.com/stefanocoretta/speakr/issues
 Encoding: UTF-8
 RoxygenNote: 7.1.1
 Imports: tidyverse,
+    lifecycle,
     readr,
     stringr
 Suggests: knitr,

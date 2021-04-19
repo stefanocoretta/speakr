@@ -6,16 +6,9 @@
 \usage{
 set_praat_path(path, default.path = FALSE)
 }
-\arguments{
-\item{path}{The path to the 'Praat' executable.}
-
-\item{default.path}{If \code{TRUE}, the path is set to what \code{praatPath}
-returns.}
-}
-\value{
-Nothing. It is used for its side effects.
-}
 \description{
-It assigns the default path to 'Praat' or the user assigned path (when
-    \code{default.path = FALSE}, which is the default).
+`r lifecycle::badge("deprecated")`
+
+Now speakr uses options() to set the path to 'Praat'.
 }
+\keyword{internal}

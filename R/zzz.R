@@ -7,13 +7,11 @@
   toset <- !(names(op.speakr) %in% names(op))
   if (any(toset)) options(op.speakr[toset])
 
-  set_praat_path(getOption("speakr.praat.path"))
-
   invisible()
 }
 
 .onAttach <- function(libname, pkgname) {
-  praat_path <- get_praat_path()
+  praat_path <- getOption("speakr.praat.path")
 
   if (file.exists(praat_path)) {
     packageStartupMessage("Praat found at ", praat_path)

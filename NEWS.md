@@ -12,6 +12,11 @@
 
 * Now the path to Praat is set on load and calls to the package namespace with `::` will work (closes #5).
 
+## Deprecated
+
+* `set_praat_path()` and `get_praat_path()` have been deprecated. Now the package relies on `options("speakr.praat.path")`.
+
+
 
 # speakr 3.0.0
 

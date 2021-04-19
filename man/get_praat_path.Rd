@@ -6,9 +6,9 @@
 \usage{
 get_praat_path()
 }
-\value{
-A character vector with the 'Praat' path.
-}
 \description{
-It prints the path to 'Praat' on the console for inspection.
+`r lifecycle::badge("deprecated")`
+
+Now speakr uses options() to set the path to 'Praat'.
 }
+\keyword{internal}

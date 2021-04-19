@@ -12,7 +12,7 @@
 #'
 #' @export
 start_praat <- function() {
-    system2(pkg.env$praat.path, wait = FALSE)
+    system2(getOption("speakr.praat.path"), wait = FALSE)
 }
 
 #' Open files with 'Praat'.
@@ -40,7 +40,7 @@ start_praat <- function() {
 #'
 #' @export
 praat_open <- function(...) {
-    system2(pkg.env$praat.path, c("--open", list(...)), wait = FALSE)
+    system2(getOption("speakr.praat.path"), c("--open", list(...)), wait = FALSE)
 }
 
 #' Run a 'Praat' script.
@@ -73,9 +73,9 @@ praat_open <- function(...) {
 #' @export
 praat_run <- function(script, ..., capture = FALSE) {
     if (capture == FALSE) {
-        system2(pkg.env$praat.path, c("--run", c(script, list(...))))
+        system2(getOption("speakr.praat.path"), c("--run", c(script, list(...))))
     } else {
-        output <- system2(pkg.env$praat.path, c("--run", c(script, list(...))),
+        output <- system2(getOption("speakr.praat.path"), c("--run", c(script, list(...))),
                           stdout = capture
         )
         return(paste(output, collapse = "\n"))
