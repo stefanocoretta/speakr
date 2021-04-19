@@ -73,8 +73,8 @@
 
 
 <meta property="og:title" content="Set path to 'Praat'. — set_praat_path" />
-<meta property="og:description" content="It assigns the default path to 'Praat' or the user assigned path (when
-    default.path = FALSE, which is the default)." />
+<meta property="og:description" content="`r lifecycle::badge(&quot;deprecated&quot;)`
+Now speakr uses options() to set the path to 'Praat'." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -175,29 +175,13 @@
     </div>
 
     <div class="ref-description">
-    <p>It assigns the default path to 'Praat' or the user assigned path (when
-    <code>default.path = FALSE</code>, which is the default).</p>
+    <p>`r lifecycle::badge("deprecated")`</p>
+<p>Now speakr uses options() to set the path to 'Praat'.</p>
     </div>
 
     <pre class="usage"><span class='fu'>set_praat_path</span><span class='op'>(</span><span class='va'>path</span>, default.path <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>path</th>
-      <td><p>The path to the 'Praat' executable.</p></td>
-    </tr>
-    <tr>
-      <th>default.path</th>
-      <td><p>If <code>TRUE</code>, the path is set to what <code>praatPath</code>
-returns.</p></td>
-    </tr>
-    </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>Nothing. It is used for its side effects.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
