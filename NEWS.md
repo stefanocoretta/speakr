@@ -2,7 +2,7 @@
 
 ## Added
 
-* `praat_plot()` to plot waveforms and specrograms with the Praat plotting facilities.
+* `praat_plot()` to plot waveforms and spectrograms with the Praat plotting facilities.
 
 * `use_praat_plot_script()` to save a copy of the Praat plotting script on disk.
 
