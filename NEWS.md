@@ -1,3 +1,12 @@
+# speakr 3.1.1
+
+## Fixed
+
+* Fixed CRAN errors.
+
+
+
+
 # speakr 3.1.0
 
 ## Added
