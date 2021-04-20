@@ -1,4 +1,4 @@
-This patch fixes errors and notes (https://cran.r-project.org/web/checks/check_results_speakr.html)
+This patch fixes the errors and notes reported in https://cran.r-project.org/web/checks/check_results_speakr.html
 
 ## Test environments
 
@@ -7,6 +7,7 @@ This patch fixes errors and notes (https://cran.r-project.org/web/checks/check_r
 - R-hub windows-x86_64-devel (r-devel)
 - R-hub ubuntu-gcc-release (r-release)
 - R-hub solaris-x86-patched (r-release)
+- GitHub Actions standard CRAN checks (win/macos/ubuntu r-release; ubuntu r-devel)
 
 ## R CMD check results
 
