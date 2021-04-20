@@ -1,7 +1,7 @@
 #' Get system path to 'Praat'.
 #'
 #' The function returns the path to the 'Praat' executable depending on the
-#'     system.
+#'     system. If the operating system is not supported, the package gracefully
 #'
 #' @return The path to the 'Praat' executable.
 #'
@@ -15,6 +15,8 @@ praat_path <- function() {
         return("/usr/bin/praat")
     } else if (sysname == "Windows") {
         return(normalizePath("C:/Program Files/Praat.exe", mustWork = FALSE))
+    } else {
+        return(FALSE)
     }
 }
 

@@ -13,9 +13,20 @@
 .onAttach <- function(libname, pkgname) {
   praat_path <- getOption("speakr.praat.path")
 
-  if (file.exists(praat_path)) {
-    packageStartupMessage("Praat found at ", praat_path)
+  if (praat_path != FALSE) {
+    if (file.exists(praat_path)) {
+      packageStartupMessage("Praat found at ", praat_path)
+    } else {
+      packageStartupMessage(
+        "Praat not found! Please specify the path to Praat with
+        `(options(speakr.praat.path = ...))` or install it if it's
+        not installed yet."
+      )
+    }
   } else {
-    packageStartupMessage("Praat not found! Please specify the path to Praat or install it if it's not installed yet.")
+    packageStartupMessage(
+      "Automatic detection of Praat is not supported on this operating system.
+      Please specify the path to Praat with `(options(speakr.praat.path = ...))`."
+    )
   }
 }
