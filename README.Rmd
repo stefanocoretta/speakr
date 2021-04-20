@@ -21,6 +21,7 @@ library(speakr)
 <!-- badges: start -->
 `r badger::badge_github_version(color = "blue")`
 `r badger::badge_devel(color = "orange")`
+[![R-CMD-check](https://github.com/stefanocoretta/speakr/workflows/R-CMD-check/badge.svg)](https://github.com/stefanocoretta/speakr/actions)
 <!-- badges: end -->
 
 With speakr, you can run Praat scripts in R and capture their `infoLine` output.
