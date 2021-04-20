@@ -11,7 +11,9 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
-library(tidyverse)
+library(readr)
+library(ggplot2)
+library(magrittr)
 theme_set(theme_minimal())
 library(speakr)
 ```
