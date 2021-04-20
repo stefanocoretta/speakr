@@ -7,11 +7,9 @@
 on:
   push:
     branches:
-      - main
       - devel
   pull_request:
     branches:
-      - main
       - devel
 
 name: R-CMD-check
@@ -37,6 +35,7 @@ jobs:
           - {os: ubuntu-18.04,   r: '3.3',     rspm: "https://packagemanager.rstudio.com/cran/__linux__/bionic/latest"}
 
     env:
+      R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
       RSPM: ${{ matrix.config.rspm }}
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
@@ -69,14 +68,15 @@ jobs:
       - name: Install system dependencies
         if: runner.os == 'Linux'
         run: |
-          pak::local_system_requirements(execute = TRUE)
-          pak::pkg_system_requirements("rcmdcheck", execute = TRUE)
-        shell: Rscript {0}
+          while read -r cmd
+          do
+            eval sudo $cmd
+          done < <(Rscript -e 'writeLines(remotes::system_requirements("ubuntu", "16.04"))')
 
       - name: Install dependencies
         run: |
-          pak::local_install_dev_deps(upgrade = TRUE)
-          pak::pkg_install("rcmdcheck")
+          remotes::install_deps(dependencies = TRUE)
+          remotes::install_cran("rcmdcheck")
         shell: Rscript {0}
 
       - name: Session info
