@@ -23,7 +23,7 @@ library(speakr)
 <!-- badges: start -->
 `r badger::badge_cran_release("speakr", "blue")`
 `r badger::badge_cran_checks("speakr")`
-`r badger::badge_github_actions()`
+[![R-CMD-check](https://github.com/stefanocoretta/speakr/workflows/R-CMD-check/badge.svg)](https://github.com/stefanocoretta/speakr/actions)
 `r badger::badge_devel(color = "orange")`
 <!-- badges: end -->
 
