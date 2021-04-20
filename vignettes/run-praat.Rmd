@@ -14,7 +14,9 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-library(tidyverse)
+library(readr)
+library(tibble)
+library(ggplot2)
 theme_set(theme_dark())
 library(speakr)
 ```

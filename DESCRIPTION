@@ -14,10 +14,11 @@ URL: https://github.com/stefanocoretta/speakr
 BugReports: https://github.com/stefanocoretta/speakr/issues
 Encoding: UTF-8
 RoxygenNote: 7.1.1
-Imports: tidyverse,
+Imports: ggplot2,
     lifecycle,
     readr,
-    stringr
+    stringr,
+    tibble
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr
