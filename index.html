@@ -138,18 +138,23 @@
 <p>For a quick start, check out the vignette with:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span><span class="op">(</span><span class="st">"run-praat"</span>, <span class="st">"speakr"</span><span class="op">)</span></code></pre></div>
+<p>On macOS, Linux and Windows, the path to praat is set automatically to the default installation path. If you have installed Praat in a different location, or if your operating system is not supported, you can set the path to Praat with <code><a href="https://rdrr.io/r/base/options.html">option(speakr.praat.path)</a></code>.</p>
+<p>For example:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/options.html">option</a></span><span class="op">(</span>speakr.praat.path <span class="op">=</span> <span class="st">"./custom/praat.exe"</span><span class="op">)</span></code></pre></div>
+<p>You can either run this command every time you start a new R session, or you can add the command to your <code>.Rprofile</code> (recommended).</p>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
 <p>Use <code>prat_run()</code> to run a Praat script, and <code>capture = TRUE</code> to capture the output of the <code>write/appendInfoLine</code> commands in the script. Everything is set in the Praat script as usual, so you don’t have to learn a new language to perform tasks you already know how to perform.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">script</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"get-formants-args.praat"</span>, package <span class="op">=</span> <span class="st">"speakr"</span><span class="op">)</span>
 
 <span class="va">formants</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/praat_run.html">praat_run</a></span><span class="op">(</span><span class="va">script</span>, <span class="st">"Hertz"</span>, <span class="fl">0.03</span>, capture <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">read_csv</span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>Let’s check the tibble <code>formants</code>.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">formants</span>
 <span class="co">#&gt; # A tibble: 5 x 4</span>
 <span class="co">#&gt;   vowel    F1    F2    F3</span>
@@ -160,7 +165,7 @@
 <span class="co">#&gt; 4 o      562.  855. 2463.</span>
 <span class="co">#&gt; 5 u      434. 1331. 2816.</span></code></pre></div>
 <p>And let’s make a vowel plot.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">formants</span> <span class="op">%&gt;%</span>
   <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">F2</span>, <span class="va">F1</span>, label <span class="op">=</span> <span class="va">vowel</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">geom_label</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span>
@@ -178,12 +183,12 @@
 <h2 class="hasAnchor">
 <a href="#simple-plotting-utility" class="anchor"></a>Simple plotting utility</h2>
 <p>You can plot a sound file and TextGrid using Praat’s plotting facilities.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">wav</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"vowels.wav"</span>, package <span class="op">=</span> <span class="st">"speakr"</span><span class="op">)</span>
 
 <span class="fu"><a href="reference/praat_plot.html">praat_plot</a></span><span class="op">(</span><span class="st">"vowels.png"</span>, <span class="va">wav</span>, f0 <span class="op">=</span> <span class="cn">T</span>, f0_max <span class="op">=</span> <span class="fl">200</span>, end <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></code></pre></div>
 <p>You can include the plot in an Rmarkdown file with knitr.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">include_graphics</a></span><span class="op">(</span><span class="st">"man/figures/vowels.png"</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/vowels.png" width="100%"></p>
 </div>
@@ -219,9 +224,10 @@
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/stefanocoretta/speakr"><img src="https://img.shields.io/badge/devel%20version-3.1.0.9000-blue.svg"></a></li>
+<li><a href="https://cran.r-project.org/package=speakr"><img src="https://www.r-pkg.org/badges/version/speakr?color=blue"></a></li>
+<li><a href="https://cran.r-project.org/web/checks/check_results_speakr.html"><img src="https://cranchecks.info/badges/summary/speakr" alt="CRAN checks"></a></li>
+<li><a href="https://github.com/stefanocoretta/speakr/actions"><img src="https://github.com/stefanocoretta/speakr/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 <li><a href="https://github.com/stefanocoretta/speakr"><img src="https://img.shields.io/badge/devel%20version-3.1.0.9000-orange.svg"></a></li>
-<li><a href="https://github.com/stefanocoretta/speakr/actions"><img src="https://github.com/stefanocoretta/speakr/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
 </ul>
 </div>
 </div>
