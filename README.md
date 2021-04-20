@@ -39,6 +39,20 @@ For a quick start, check out the vignette with:
 vignette("run-praat", "speakr")
 ```
 
+On macOS, Linux and Windows, the path to praat is set automatically to
+the default installation path. If you have installed Praat in a
+different location, or if your operating system is not supported, you
+can set the path to Praat with `option(speakr.praat.path)`.
+
+For example:
+
+``` r
+option(speakr.praat.path = "./custom/praat.exe")
+```
+
+You can either run this command every time you start a new R session, or
+you can add the command to your `.Rprofile` (recommended).
+
 ## Example
 
 Use `prat_run()` to run a Praat script, and `capture = TRUE` to capture
