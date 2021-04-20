@@ -55,7 +55,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">speakr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">3.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">3.1.0.9000</span>
       </span>
     </div>
 
@@ -168,7 +168,7 @@
 <pre><code>#&gt; vowel,F1,F2,F3 a,784.4671170665314,1390.927070235929,2433.2403445805335 e,417.00791908249613,2042.453249988405,2423.8583300060627 i,259.0985814360339,2231.740765785137,2819.218714861659 o,562.2955245317842,854.5311682738487,2463.26727657427 u,434.4420321283883,1331.362161871936,2815.9876831692327</code></pre>
 <p>Of course, you can redirect the captured output using the pipe <code>%&gt;%</code>, for example to read the output as a tibble.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span>
 <span class="co"># Output to R tibble</span>
 <span class="va">formants</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/praat_run.html">praat_run</a></span><span class="op">(</span><span class="va">script</span>, capture <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="op">)</span>
