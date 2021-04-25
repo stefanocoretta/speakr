@@ -1,3 +1,11 @@
+# speakr 3.1.1.9000
+
+## Added
+
+* Zenodo DOI in Readme.
+
+
+
 # speakr 3.1.1
 
 ## Fixed

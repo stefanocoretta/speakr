@@ -25,6 +25,7 @@ library(speakr)
 `r badger::badge_cran_checks("speakr")`
 [![R-CMD-check](https://github.com/stefanocoretta/speakr/workflows/R-CMD-check/badge.svg)](https://github.com/stefanocoretta/speakr/actions)
 `r badger::badge_devel(color = "orange")`
+`r badger::badge_doi(doi = "10.5281/zenodo.4014768", color = "blue")`
 <!-- badges: end -->
 
 With speakr, you can run Praat scripts in R and capture their `infoLine` output.
