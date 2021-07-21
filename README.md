@@ -9,7 +9,7 @@
 [![CRAN
 checks](https://cranchecks.info/badges/summary/speakr)](https://cran.r-project.org/web/checks/check_results_speakr.html)
 [![R-CMD-check](https://github.com/stefanocoretta/speakr/workflows/R-CMD-check/badge.svg)](https://github.com/stefanocoretta/speakr/actions)
-[![](https://img.shields.io/badge/devel%20version-3.1.1-orange.svg)](https://github.com/stefanocoretta/speakr)
+[![](https://img.shields.io/badge/devel%20version-3.2.0-orange.svg)](https://github.com/stefanocoretta/speakr)
 [![](https://img.shields.io/badge/doi-10.5281/zenodo.4014768-blue.svg)](https://doi.org/10.5281/zenodo.4014768)
 <!-- badges: end -->
 
@@ -65,6 +65,14 @@ script <- system.file("extdata", "get-formants-args.praat", package = "speakr")
 
 formants <- praat_run(script, "Hertz", 0.03, capture = TRUE) %>%
   read_csv()
+#> Rows: 5 Columns: 4
+#> ── Column specification ────────────────────────────────────────────────────────
+#> Delimiter: ","
+#> chr (1): vowel
+#> dbl (3): F1, F2, F3
+#> 
+#> ℹ Use `spec()` to retrieve the full column specification for this data.
+#> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ```
 
 Let’s check the tibble `formants`.

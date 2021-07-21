@@ -22,7 +22,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Stefano Coretta \email{stefano.coretta@gmail.com}
+\strong{Maintainer}: Stefano Coretta \email{stefano.coretta@gmail.com} (\href{https://orcid.org/0000-0001-9627-5532}{ORCID}) (stefanocoretta)
 
 }
 \keyword{internal}

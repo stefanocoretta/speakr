@@ -1,8 +1,12 @@
-# speakr 3.1.1.9000
+# speakr 3.2.0
 
 ## Added
 
 * Zenodo DOI in Readme.
+
+## Fixed
+
+* Fixed errors in vignette after update of readr.
 
 
 
