@@ -58,7 +58,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">speakr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">3.1.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">3.2.0</span>
       </span>
     </div>
 
@@ -152,7 +152,15 @@
 <code class="sourceCode R"><span class="va">script</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"get-formants-args.praat"</span>, package <span class="op">=</span> <span class="st">"speakr"</span><span class="op">)</span>
 
 <span class="va">formants</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/praat_run.html">praat_run</a></span><span class="op">(</span><span class="va">script</span>, <span class="st">"Hertz"</span>, <span class="fl">0.03</span>, capture <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">read_csv</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+  <span class="fu">read_csv</span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; Rows: 5 Columns: 4</span>
+<span class="co">#&gt; ── Column specification ────────────────────────────────────────────────────────</span>
+<span class="co">#&gt; Delimiter: ","</span>
+<span class="co">#&gt; chr (1): vowel</span>
+<span class="co">#&gt; dbl (3): F1, F2, F3</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.</span>
+<span class="co">#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</span></code></pre></div>
 <p>Let’s check the tibble <code>formants</code>.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">formants</span>
@@ -217,7 +225,8 @@
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Stefano Coretta <br><small class="roles"> Author, maintainer </small>  </li>
+<li>Stefano Coretta <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0001-9627-5532" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> <br><small>(stefanocoretta)</small>
+</li>
 </ul>
 </div>
 
@@ -227,7 +236,7 @@
 <li><a href="https://cran.r-project.org/package=speakr"><img src="https://www.r-pkg.org/badges/version/speakr?color=blue"></a></li>
 <li><a href="https://cran.r-project.org/web/checks/check_results_speakr.html"><img src="https://cranchecks.info/badges/summary/speakr" alt="CRAN checks"></a></li>
 <li><a href="https://github.com/stefanocoretta/speakr/actions"><img src="https://github.com/stefanocoretta/speakr/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://github.com/stefanocoretta/speakr"><img src="https://img.shields.io/badge/devel%20version-3.1.1-orange.svg"></a></li>
+<li><a href="https://github.com/stefanocoretta/speakr"><img src="https://img.shields.io/badge/devel%20version-3.2.0-orange.svg"></a></li>
 <li><a href="https://doi.org/10.5281/zenodo.4014768"><img src="https://img.shields.io/badge/doi-10.5281/zenodo.4014768-blue.svg"></a></li>
 </ul>
 </div>
