@@ -3,7 +3,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^README\.md$
-^speakr.sublime-*
 ^README\.Rmd$
 ^\.github$
 ^_pkgdown\.yml$
