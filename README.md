@@ -42,7 +42,7 @@ vignette("run-praat", "speakr")
 On macOS, Linux and Windows, the path to praat is set automatically to
 the default installation path. If you have installed Praat in a
 different location, or if your operating system is not supported, you
-can set the path to Praat with `option(speakr.praat.path)`.
+can set the path to Praat with `options(speakr.praat.path)`.
 
 For example:
 
