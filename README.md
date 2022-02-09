@@ -47,7 +47,7 @@ can set the path to Praat with `option(speakr.praat.path)`.
 For example:
 
 ``` r
-option(speakr.praat.path = "./custom/praat.exe")
+options(speakr.praat.path = "./custom/praat.exe")
 ```
 
 You can either run this command every time you start a new R session, or
