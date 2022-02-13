@@ -25,12 +25,7 @@
 <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- Flatly Theme - Light  --><link id="css-light" rel="stylesheet" href="https://bootswatch.com/3/flatly/bootstrap.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
-<!-- Darkly Theme - Dark --><link id="css-dark" rel="stylesheet" href="https://bootswatch.com/3/darkly/bootstrap.css" media="(prefers-color-scheme: dark)">
-<!-- preferably CSS --><link rel="stylesheet" href="../preferably.css">
-<link id="css-code-light" rel="stylesheet" href="../code-color-scheme-light.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
-<link id="css-code-dark" rel="stylesheet" href="../code-color-scheme-dark.css" media="(prefers-color-scheme: dark)">
-<!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
@@ -40,9 +35,15 @@
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+<![endif]--><!-- Flatly Theme - Light  --><link id="css-light" rel="stylesheet" href="https://bootswatch.com/3/flatly/bootstrap.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+<!-- Darkly Theme - Dark --><link id="css-dark" rel="stylesheet" href="https://bootswatch.com/3/darkly/bootstrap.css" media="(prefers-color-scheme: dark)">
+<!-- preferably CSS --><link rel="stylesheet" href="../preferably.css">
+<link id="css-code-light" rel="stylesheet" href="../code-color-scheme-light.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+<link id="css-code-dark" rel="stylesheet" href="../code-color-scheme-dark.css" media="(prefers-color-scheme: dark)">
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -55,18 +56,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">speakr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">3.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">3.2.0.9000</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
@@ -91,7 +86,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/stefanocoretta/speakr/">
+  <a href="https://github.com/stefanocoretta/speakr/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -116,7 +111,7 @@
       <h1 data-toc-skip>Plot with Praat</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/stefanocoretta/speakr/blob/master/vignettes/praat-plot.Rmd"><code>vignettes/praat-plot.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/stefanocoretta/speakr/blob/HEAD/vignettes/praat-plot.Rmd" class="external-link"><code>vignettes/praat-plot.Rmd</code></a></small>
       <div class="hidden name"><code>praat-plot.Rmd</code></div>
 
     </div>
@@ -126,41 +121,41 @@
 <p>With <code><a href="../reference/praat_plot.html">praat_plot()</a></code>, you can create plots of the waveform and spectrogram of a sound file, and add annotation from a TextGrid file.</p>
 <p>Start by loading the package if you haven’t already.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/stefanocoretta/speakr">speakr</a></span><span class="op">)</span></code></pre></div>
-<div id="basic-plot" class="section level2">
-<h2 class="hasAnchor">
-<a href="#basic-plot" class="anchor"></a>Basic plot</h2>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/stefanocoretta/speakr" class="external-link">speakr</a></span><span class="op">)</span></code></pre></div>
+<div class="section level2">
+<h2 id="basic-plot">Basic plot<a class="anchor" aria-label="anchor" href="#basic-plot"></a>
+</h2>
 <p>The minimal plot includes a waveform and a spectrogram of a sound file.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># The sound file.</span>
-<span class="va">wav</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"vowels.wav"</span>, package <span class="op">=</span> <span class="st">"speakr"</span><span class="op">)</span>
+<span class="va">wav</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"vowels.wav"</span>, package <span class="op">=</span> <span class="st">"speakr"</span><span class="op">)</span>
 
 <span class="fu"><a href="../reference/praat_plot.html">praat_plot</a></span><span class="op">(</span><span class="st">"vowels.png"</span>, <span class="va">wav</span>, end <span class="op">=</span> <span class="fl">3</span>, tg <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="plot-with-textgrid" class="section level2">
-<h2 class="hasAnchor">
-<a href="#plot-with-textgrid" class="anchor"></a>Plot with TextGrid</h2>
+<div class="section level2">
+<h2 id="plot-with-textgrid">Plot with TextGrid<a class="anchor" aria-label="anchor" href="#plot-with-textgrid"></a>
+</h2>
 <p>You can include annotation from a TextGrid file. You can specify the path to the TextGrid with the <code>tg</code> argument. If <code>tg</code> is set to <code>NULL</code> (the default) the function will search for a TextGrid file with the same base name as the wav file, and if it finds one it will add it to the plot.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/praat_plot.html">praat_plot</a></span><span class="op">(</span><span class="st">"vowels-tg.png"</span>, <span class="va">wav</span>, end <span class="op">=</span> <span class="fl">3</span>, tg <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="f0-track" class="section level2">
-<h2 class="hasAnchor">
-<a href="#f0-track" class="anchor"></a>f0 track</h2>
+<div class="section level2">
+<h2 id="f0-track">f0 track<a class="anchor" aria-label="anchor" href="#f0-track"></a>
+</h2>
 <p>You can add a track of f0 by setting <code>f0 = TRUE</code>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/praat_plot.html">praat_plot</a></span><span class="op">(</span><span class="st">"vowels-tg-f0.png"</span>, <span class="va">wav</span>, end <span class="op">=</span> <span class="fl">3</span>, tg <span class="op">=</span> <span class="cn">NULL</span>, f0 <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="further-customisation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#further-customisation" class="anchor"></a>Further customisation</h2>
+<div class="section level2">
+<h2 id="further-customisation">Further customisation<a class="anchor" aria-label="anchor" href="#further-customisation"></a>
+</h2>
 <p>Due to the extreme flexibility of the Praat plotting facilities, it is not that straightforward to include all the possible parameters in a single function.</p>
-<p>If you would like to customise the plot further, you can run <code><a href="../reference/use_praat_plot_script.html">use_praat_plot_script("plot.praat")</a></code> which will copy the Praat plotting script used in <code><a href="../reference/praat_plot.html">praat_plot()</a></code> on disk (in the path you specify in the function), so that you can make any changes to the script and then run it with <code><a href="../reference/praat_run.html">praat_run()</a></code> as you would with any other Praat script.</p>
+<p>If you would like to customise the plot further, you can run <code>use_praat_plot_script("plot.praat")</code> which will copy the Praat plotting script used in <code><a href="../reference/praat_plot.html">praat_plot()</a></code> on disk (in the path you specify in the function), so that you can make any changes to the script and then run it with <code><a href="../reference/praat_run.html">praat_run()</a></code> as you would with any other Praat script.</p>
 </div>
-<div id="include-plots-in-rmarkdown" class="section level2">
-<h2 class="hasAnchor">
-<a href="#include-plots-in-rmarkdown" class="anchor"></a>Include plots in Rmarkdown</h2>
-<p>To include a plot created with <code><a href="../reference/praat_plot.html">praat_plot()</a></code> you can use <code><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">knitr::include_graphics("your-plot.png")</a></code>.</p>
+<div class="section level2">
+<h2 id="include-plots-in-rmarkdown">Include plots in Rmarkdown<a class="anchor" aria-label="anchor" href="#include-plots-in-rmarkdown"></a>
+</h2>
+<p>To include a plot created with <code><a href="../reference/praat_plot.html">praat_plot()</a></code> you can use <code>knitr::include_graphics("your-plot.png")</code>.</p>
 </div>
   </div>
 
@@ -175,11 +170,14 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Stefano Coretta.</p>
+  <p></p>
+<p>Developed by Stefano Coretta.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Made with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1, using <a href="https://preferably.amirmasoudabdol.name/?source=footer">preferably</a> template.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p class="preferably">Using <a href="https://preferably.amirmasoudabdol.name/?source=footer" class="external-link">preferably</a> template.</p>
 </div>
 
       </footer>
@@ -187,6 +185,8 @@
 
   
 
+
+  
 
   </body>
 </html>
