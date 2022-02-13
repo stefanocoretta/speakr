@@ -132,10 +132,10 @@
 <p>For a quick start, check out the vignette with:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/vignette.html" class="external-link">vignette</a></span><span class="op">(</span><span class="st">"run-praat"</span>, <span class="st">"speakr"</span><span class="op">)</span></code></pre></div>
-<p>On macOS, Linux and Windows, the path to praat is set automatically to the default installation path. If you have installed Praat in a different location, or if your operating system is not supported, you can set the path to Praat with <code>option(speakr.praat.path)</code>.</p>
+<p>On macOS, Linux and Windows, the path to praat is set automatically to the default installation path. If you have installed Praat in a different location, or if your operating system is not supported, you can set the path to Praat with <code>options(speakr.praat.path)</code>.</p>
 <p>For example:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">option</a></span><span class="op">(</span>speakr.praat.path <span class="op">=</span> <span class="st">"./custom/praat.exe"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span>speakr.praat.path <span class="op">=</span> <span class="st">"./custom/praat.exe"</span><span class="op">)</span></code></pre></div>
 <p>You can either run this command every time you start a new R session, or you can add the command to your <code>.Rprofile</code> (recommended).</p>
 </div>
 <div class="section level2">
