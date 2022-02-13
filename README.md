@@ -9,7 +9,7 @@
 [![CRAN
 checks](https://cranchecks.info/badges/summary/speakr)](https://cran.r-project.org/web/checks/check_results_speakr.html)
 [![R-CMD-check](https://github.com/stefanocoretta/speakr/workflows/R-CMD-check/badge.svg)](https://github.com/stefanocoretta/speakr/actions)
-[![](https://img.shields.io/badge/devel%20version-3.2.0-orange.svg)](https://github.com/stefanocoretta/speakr)
+[![](https://img.shields.io/badge/devel%20version-3.2.0.9000-orange.svg)](https://github.com/stefanocoretta/speakr)
 [![](https://img.shields.io/badge/doi-10.5281/zenodo.4014768-blue.svg)](https://doi.org/10.5281/zenodo.4014768)
 <!-- badges: end -->
 
@@ -66,7 +66,7 @@ script <- system.file("extdata", "get-formants-args.praat", package = "speakr")
 formants <- praat_run(script, "Hertz", 0.03, capture = TRUE) %>%
   read_csv()
 #> Rows: 5 Columns: 4
-#> ── Column specification ────────────────────────────────────────────────────────
+#> ── Column specification ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 #> Delimiter: ","
 #> chr (1): vowel
 #> dbl (3): F1, F2, F3
@@ -79,7 +79,7 @@ Let’s check the tibble `formants`.
 
 ``` r
 formants
-#> # A tibble: 5 x 4
+#> # A tibble: 5 × 4
 #>   vowel    F1    F2    F3
 #>   <chr> <dbl> <dbl> <dbl>
 #> 1 a      784. 1391. 2433.
