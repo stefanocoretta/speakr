@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# speakr: A Wrapper for the Phonetic Software Praat <img src='man/figures/logo.png' align="right" height="120" />
+# speakr: A Wrapper for the Phonetic Software Praat <img src='man/figures/logo.png' style="float: right;" height="120" />
 
 <!-- badges: start -->
 
@@ -9,7 +9,7 @@
 [![CRAN
 checks](https://cranchecks.info/badges/summary/speakr)](https://cran.r-project.org/web/checks/check_results_speakr.html)
 [![R-CMD-check](https://github.com/stefanocoretta/speakr/workflows/R-CMD-check/badge.svg)](https://github.com/stefanocoretta/speakr/actions)
-[![](https://img.shields.io/badge/devel%20version-3.2.0.9000-orange.svg)](https://github.com/stefanocoretta/speakr)
+[![](https://img.shields.io/badge/devel%20version-3.2.1-orange.svg)](https://github.com/stefanocoretta/speakr)
 [![](https://img.shields.io/badge/doi-10.5281/zenodo.4014768-blue.svg)](https://doi.org/10.5281/zenodo.4014768)
 <!-- badges: end -->
 
@@ -66,7 +66,7 @@ script <- system.file("extdata", "get-formants-args.praat", package = "speakr")
 formants <- praat_run(script, "Hertz", 0.03, capture = TRUE) %>%
   read_csv()
 #> Rows: 5 Columns: 4
-#> ── Column specification ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+#> ── Column specification ────────────────────────────────────────────────────────
 #> Delimiter: ","
 #> chr (1): vowel
 #> dbl (3): F1, F2, F3

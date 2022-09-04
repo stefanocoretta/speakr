@@ -1,10 +1,12 @@
-# speaker v3.2.0.9000
+# speaker v3.2.1
 
 ## Fixed
 
 * `option()` to `options()` in README (7fb7757). Thanks to @agricolamz (#11).
 
+## Developer
 
+* Fixed CRAN errors related to HTML5 checks.
 
 
 # speakr v3.2.0

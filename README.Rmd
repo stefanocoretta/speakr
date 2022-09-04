@@ -20,7 +20,7 @@ theme_set(theme_minimal())
 library(speakr)
 ```
 
-# speakr: A Wrapper for the Phonetic Software Praat <img src='man/figures/logo.png' align="right" height="120" />
+# speakr: A Wrapper for the Phonetic Software Praat <img src='man/figures/logo.png' style="float: right;" height="120" />
 
 <!-- badges: start -->
 `r badger::badge_cran_release("speakr", "blue")`
