@@ -56,7 +56,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">speakr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">3.2.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">3.2.1</span>
       </span>
     </div>
 
@@ -66,7 +66,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -121,30 +121,30 @@
 <p>With <code><a href="../reference/praat_plot.html">praat_plot()</a></code>, you can create plots of the waveform and spectrogram of a sound file, and add annotation from a TextGrid file.</p>
 <p>Start by loading the package if you haven’t already.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/stefanocoretta/speakr" class="external-link">speakr</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/stefanocoretta/speakr" class="external-link">speakr</a></span><span class="op">)</span></span></code></pre></div>
 <div class="section level2">
 <h2 id="basic-plot">Basic plot<a class="anchor" aria-label="anchor" href="#basic-plot"></a>
 </h2>
 <p>The minimal plot includes a waveform and a spectrogram of a sound file.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># The sound file.</span>
-<span class="va">wav</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"vowels.wav"</span>, package <span class="op">=</span> <span class="st">"speakr"</span><span class="op">)</span>
-
-<span class="fu"><a href="../reference/praat_plot.html">praat_plot</a></span><span class="op">(</span><span class="st">"vowels.png"</span>, <span class="va">wav</span>, end <span class="op">=</span> <span class="fl">3</span>, tg <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># The sound file.</span></span>
+<span><span class="va">wav</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"vowels.wav"</span>, package <span class="op">=</span> <span class="st">"speakr"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/praat_plot.html">praat_plot</a></span><span class="op">(</span><span class="st">"vowels.png"</span>, <span class="va">wav</span>, end <span class="op">=</span> <span class="fl">3</span>, tg <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="plot-with-textgrid">Plot with TextGrid<a class="anchor" aria-label="anchor" href="#plot-with-textgrid"></a>
 </h2>
 <p>You can include annotation from a TextGrid file. You can specify the path to the TextGrid with the <code>tg</code> argument. If <code>tg</code> is set to <code>NULL</code> (the default) the function will search for a TextGrid file with the same base name as the wav file, and if it finds one it will add it to the plot.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/praat_plot.html">praat_plot</a></span><span class="op">(</span><span class="st">"vowels-tg.png"</span>, <span class="va">wav</span>, end <span class="op">=</span> <span class="fl">3</span>, tg <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/praat_plot.html">praat_plot</a></span><span class="op">(</span><span class="st">"vowels-tg.png"</span>, <span class="va">wav</span>, end <span class="op">=</span> <span class="fl">3</span>, tg <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="f0-track">f0 track<a class="anchor" aria-label="anchor" href="#f0-track"></a>
 </h2>
 <p>You can add a track of f0 by setting <code>f0 = TRUE</code>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/praat_plot.html">praat_plot</a></span><span class="op">(</span><span class="st">"vowels-tg-f0.png"</span>, <span class="va">wav</span>, end <span class="op">=</span> <span class="fl">3</span>, tg <span class="op">=</span> <span class="cn">NULL</span>, f0 <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/praat_plot.html">praat_plot</a></span><span class="op">(</span><span class="st">"vowels-tg-f0.png"</span>, <span class="va">wav</span>, end <span class="op">=</span> <span class="fl">3</span>, tg <span class="op">=</span> <span class="cn">NULL</span>, f0 <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="further-customisation">Further customisation<a class="anchor" aria-label="anchor" href="#further-customisation"></a>
@@ -176,7 +176,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
   <p class="preferably">Using <a href="https://preferably.amirmasoudabdol.name/?source=footer" class="external-link">preferably</a> template.</p>
 </div>
 

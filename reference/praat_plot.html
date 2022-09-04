@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">speakr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">3.2.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">3.2.1</span>
       </span>
     </div>
 
@@ -38,7 +38,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -82,61 +82,84 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">praat_plot</span><span class="op">(</span>
-  <span class="va">file</span>,
-  <span class="va">wav</span>,
-  tg <span class="op">=</span> <span class="cn">NULL</span>,
-  start <span class="op">=</span> <span class="fl">0</span>,
-  end <span class="op">=</span> <span class="cn">NULL</span>,
-  width <span class="op">=</span> <span class="fl">5</span>,
-  format <span class="op">=</span> <span class="st">"png"</span>,
-  f0 <span class="op">=</span> <span class="cn">FALSE</span>,
-  f0_min <span class="op">=</span> <span class="fl">0</span>,
-  f0_max <span class="op">=</span> <span class="fl">500</span>,
-  spec_max <span class="op">=</span> <span class="fl">5000</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">praat_plot</span><span class="op">(</span></span>
+<span>  <span class="va">file</span>,</span>
+<span>  <span class="va">wav</span>,</span>
+<span>  tg <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  start <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>  end <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  width <span class="op">=</span> <span class="fl">5</span>,</span>
+<span>  format <span class="op">=</span> <span class="st">"png"</span>,</span>
+<span>  f0 <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  f0_min <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>  f0_max <span class="op">=</span> <span class="fl">500</span>,</span>
+<span>  spec_max <span class="op">=</span> <span class="fl">5000</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>file</dt>
 <dd><p>Output file path as a string.</p></dd>
+
+
 <dt>wav</dt>
 <dd><p>Wav file path as a string.</p></dd>
+
+
 <dt>tg</dt>
 <dd><p>TextGrid file path as a string. If `NULL` (the default), a TextGrid
 is plotted if a TextGrid file with the same name as the wav file is found.
 No TextGrid is plotted otherwise.</p></dd>
+
+
 <dt>start</dt>
 <dd><p>Start time of the plotting window in seconds.</p></dd>
+
+
 <dt>end</dt>
 <dd><p>End time of the plotting window in seconds. If `NULL` (the
 default), plot the entire duration.</p></dd>
+
+
 <dt>width</dt>
 <dd><p>Width of the plot in inches.</p></dd>
+
+
 <dt>format</dt>
 <dd><p>Output file format (`png` by default, or `pdf`).</p></dd>
+
+
 <dt>f0</dt>
 <dd><p>Whether to plot f0 (`FALSE` by default).</p></dd>
+
+
 <dt>f0_min</dt>
 <dd><p>If `f0 = TRUE`, minimum f0 value (`0` by default).</p></dd>
+
+
 <dt>f0_max</dt>
 <dd><p>If `f0 = TRUE`, maximum f0 value (`500` by default).</p></dd>
+
+
 <dt>spec_max</dt>
 <dd><p>Maximum frequency for the spectrogram (`5000` by default).</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Nothing. It is used for its side effects.</p>
+    
+
+<p>Nothing. It is used for its side effects.</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="va">wav</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"vowels.wav"</span>, package <span class="op">=</span> <span class="st">"speakr"</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu">praat_plot</span><span class="op">(</span><span class="st">"vowels.png"</span>, <span class="va">wav</span>, f0 <span class="op">=</span> <span class="cn">TRUE</span>, f0_max <span class="op">=</span> <span class="fl">200</span>, end <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="va">wav</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"vowels.wav"</span>, package <span class="op">=</span> <span class="st">"speakr"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">praat_plot</span><span class="op">(</span><span class="st">"vowels.png"</span>, <span class="va">wav</span>, f0 <span class="op">=</span> <span class="cn">TRUE</span>, f0_max <span class="op">=</span> <span class="fl">200</span>, end <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -151,7 +174,7 @@ default), plot the entire duration.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
   <p class="preferably">Using <a href="https://preferably.amirmasoudabdol.name/?source=footer" class="external-link">preferably</a> template.</p>
 </div>
 
