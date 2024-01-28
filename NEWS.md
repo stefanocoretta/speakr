@@ -1,4 +1,11 @@
-# speaker v3.2.1
+# speakr v3.2.0.9000
+
+## Added
+
+- `add_lmt()` to add the Quarto extension Literate Markdown Tangler.
+
+
+# speakr v3.2.1
 
 ## Fixed
 
