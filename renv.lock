@@ -126,6 +126,16 @@
       ],
       "Hash": "cad6cf7f1d5f6e906700b9d3e718c796"
     },
+    "assertthat": {
+      "Package": "assertthat",
+      "Version": "0.2.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "tools"
+      ],
+      "Hash": "50c838a310445e954bc13f26f26a6ecf"
+    },
     "badger": {
       "Package": "badger",
       "Version": "0.2.3",
@@ -989,6 +999,13 @@
       ],
       "Hash": "55ddd2d4a1959535f18393478b0c14a6"
     },
+    "parsedate": {
+      "Package": "parsedate",
+      "Version": "1.3.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "7f5024cc7af45eeecef657fa62beb568"
+    },
     "pillar": {
       "Package": "pillar",
       "Version": "1.9.0",
@@ -1266,6 +1283,13 @@
       ],
       "Hash": "9de96463d2117f6ac49980577939dfb3"
     },
+    "rematch": {
+      "Package": "rematch",
+      "Version": "2.0.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "cbff1b666c6fa6d21202f07e2318d4f1"
+    },
     "rematch2": {
       "Package": "rematch2",
       "Version": "2.1.2",
@@ -1299,6 +1323,36 @@
         "utils"
       ],
       "Hash": "41b847654f567341725473431dd0d5ab"
+    },
+    "rhub": {
+      "Package": "rhub",
+      "Version": "1.1.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R6",
+        "assertthat",
+        "callr",
+        "cli",
+        "crayon",
+        "desc",
+        "digest",
+        "httr",
+        "jsonlite",
+        "parsedate",
+        "pillar",
+        "prettyunits",
+        "processx",
+        "rappdirs",
+        "rcmdcheck",
+        "rematch",
+        "tibble",
+        "utils",
+        "uuid",
+        "whoami",
+        "withr"
+      ],
+      "Hash": "e0880f6783f720d136755fb92d63c78b"
     },
     "rlang": {
       "Package": "rlang",
@@ -1763,6 +1817,16 @@
       ],
       "Hash": "62b65c52671e6665f803ff02954446e9"
     },
+    "uuid": {
+      "Package": "uuid",
+      "Version": "1.2-0",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "303c19bfd970bece872f93a824e323d9"
+    },
     "vctrs": {
       "Package": "vctrs",
       "Version": "0.6.5",
@@ -1837,6 +1901,18 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "c6abfa47a46d281a7d5159d0a8891e88"
+    },
+    "whoami": {
+      "Package": "whoami",
+      "Version": "1.3.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "httr",
+        "jsonlite",
+        "utils"
+      ],
+      "Hash": "ef0f4d9b8f2cc2ebeccae1d725b8a023"
     },
     "withr": {
       "Package": "withr",
