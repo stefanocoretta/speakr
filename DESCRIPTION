@@ -1,8 +1,8 @@
 Package: speakr
 Type: Package
 Title: A Wrapper for the Phonetic Software 'Praat'
-Version: 3.2.1.9000
-Date: 2022-09-04
+Version: 3.2.2
+Date: 2024-01-29
 Authors@R: person("Stefano", "Coretta", email = "stefano.coretta@gmail.com",
                   role = c("aut", "cre"),
                   comment = c(ORCID = "0000-0001-9627-5532", github = "stefanocoretta"))
@@ -15,7 +15,8 @@ URL: https://github.com/stefanocoretta/speakr
 BugReports: https://github.com/stefanocoretta/speakr/issues
 Encoding: UTF-8
 RoxygenNote: 7.3.1
-Imports: ggplot2,
+Imports: cli,
+    ggplot2,
     lifecycle,
     quarto,
     readr,

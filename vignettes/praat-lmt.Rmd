@@ -1,0 +1,117 @@
+---
+title: "Using the Literate Markdown Tangler Quarto Extension"
+output: 
+  rmarkdown::html_vignette:
+    pandoc_args:
+      - "--syntax-definition=../inst/extdata/pandoc/praat.xml"
+    highlight: tango
+vignette: >
+  %\VignetteIndexEntry{Using the Literate Markdown Tangler Quarto Extension}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## The Literate Markdown Tangler
+
+The [Literate Markdown Tangler](https://github.com/stefanocoretta/lmt) (LMT) is a Quarto Extension that provides users with a Pandoc Lua filter to write code in the literate programming framework.
+
+### Installation
+
+If you use Quarto, you can install the extension with `add_lmt()` in R:
+
+```r
+library(speakr)
+add_lmt()
+```
+
+See below to learn how to use the extension with Quarto documents.
+
+The LMT extension can be used even if you don't use Quarto. Download the `_extension/lmt/` directory from the [extension repo](https://github.com/stefanocoretta/lmt) and save the `lmt` directory with its content where pandoc can find it. Then you can just pass `lmt/lmt.lua` as a Lua script to pandoc when rendering the source file (for example if you want to use it with R Markdown files).
+
+You can use the Praat syntax highlighting definition to highlight the Praat code in the rendered file. Get the syntax definition `praat.xml` [here](https://github.com/KDE/syntax-highlighting/blob/master/data/syntax/praat.xml). (This vignette uses the tango syntax highlighting theme.)
+
+## Use
+
+Create a new `.qmd` file and add the following in the YAML header of the Quarto document:
+
+```yaml
+filters:
+  - lmt
+```
+
+When you render the document, the Pandoc filter will be run to create the Praat scripts defined in the document (see the following sections to learn how to define scripts).
+
+## `hello.praat`
+
+To initialise a file (in this case our first script), use a code block and specify the file name, like so:
+
+````praat
+```{.praat file="hello.praat"}
+# hello.praat
+writeInfoLine: "Hello Praat!"
+
+<<<append>>>
+
+<<<fin>>>
+```
+````
+
+This will create a file `hello.praat` with the code in the code block and it will embed code from the referenced code blocks (i.e. `append` and `fin`).
+
+Let's define the `append` block. We can do so with a code block for which we specify the `ref` name:
+
+````praat
+```{.praat ref="append"}
+# append
+appendInfoLine: "Heya!"
+
+for i from 1 to 5
+    <<<loop>>>
+endfor
+```
+````
+
+You will see that this code block has a referenced block too! Referencing works recursively. The `loop` code block is defined below.
+
+````praat
+```{.praat ref="loop"}
+# loop
+appendInfoLine: i
+```
+````
+
+## `second.praat`
+
+Now let's make a new script.
+
+````praat
+```{.praat file="second.praat"}
+# second.praat
+x$ = "a"
+writeInfoLine: x$
+
+<<<fin>>>
+```
+````
+
+## `fin`
+
+Of course, code blocks can be reused! Also note that the order in which the code blocks are specified does not matter.
+
+````praat
+```{.praat ref="fin"}
+# fin
+appendInfoLine: "That's all!"
+```
+````
+
+## Render
+
+Now you can just render the source file (the `.qmd` file) to generate the defined scripts in the same directory as the source file and get an HTML/PDF version of the source file that can be used as documentation of the scripts!
