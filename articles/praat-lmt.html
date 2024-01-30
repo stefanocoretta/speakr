@@ -18,7 +18,7 @@
       "<link id=\"css\" rel=\"stylesheet\" href=\"https://bootswatch.com/3/flatly/bootstrap.css\" onload=\"document.documentElement.style.display = ''\">"
     );
   }
-</script><title>Plot with Praat • speakr</title>
+</script><title>Using the Literate Markdown Tangler Quarto Extension • speakr</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -29,7 +29,7 @@
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Plot with Praat">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Using the Literate Markdown Tangler Quarto Extension">
 <meta property="og:description" content="speakr">
 <meta property="og:image" content="/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -111,69 +111,123 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Plot with Praat</h1>
+      <h1 data-toc-skip>Using the Literate Markdown Tangler Quarto
+Extension</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/stefanocoretta/speakr/blob/HEAD/vignettes/praat-plot.Rmd" class="external-link"><code>vignettes/praat-plot.Rmd</code></a></small>
-      <div class="hidden name"><code>praat-plot.Rmd</code></div>
+      <small class="dont-index">Source: <a href="https://github.com/stefanocoretta/speakr/blob/HEAD/vignettes/praat-lmt.Rmd" class="external-link"><code>vignettes/praat-lmt.Rmd</code></a></small>
+      <div class="hidden name"><code>praat-lmt.Rmd</code></div>
 
     </div>
 
     
     
-<p>With <code><a href="../reference/praat_plot.html">praat_plot()</a></code>, you can create plots of the waveform
-and spectrogram of a sound file, and add annotation from a TextGrid
-file.</p>
-<p>Start by loading the package if you haven’t already.</p>
+<div class="section level2">
+<h2 id="the-literate-markdown-tangler">The Literate Markdown Tangler<a class="anchor" aria-label="anchor" href="#the-literate-markdown-tangler"></a>
+</h2>
+<p>The <a href="https://github.com/stefanocoretta/lmt" class="external-link">Literate Markdown
+Tangler</a> (LMT) is a Quarto Extension that provides users with a
+Pandoc Lua filter to write code in the literate programming
+framework.</p>
+<div class="section level3">
+<h3 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h3>
+<p>If you use Quarto, you can install the extension with
+<code><a href="../reference/add_lmt.html">add_lmt()</a></code> in R:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/stefanocoretta/speakr" class="external-link">speakr</a></span><span class="op">)</span></span></code></pre></div>
-<div class="section level2">
-<h2 id="basic-plot">Basic plot<a class="anchor" aria-label="anchor" href="#basic-plot"></a>
-</h2>
-<p>The minimal plot includes a waveform and a spectrogram of a sound
-file.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># The sound file.</span></span>
-<span><span class="va">wav</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"vowels.wav"</span>, package <span class="op">=</span> <span class="st">"speakr"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/praat_plot.html">praat_plot</a></span><span class="op">(</span><span class="st">"vowels.png"</span>, <span class="va">wav</span>, end <span class="op">=</span> <span class="fl">3</span>, tg <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/stefanocoretta/speakr" class="external-link">speakr</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/add_lmt.html">add_lmt</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>See below to learn how to use the extension with Quarto
+documents.</p>
+<p>The LMT extension can be used even if you don’t use Quarto. Download
+the <code>_extension/lmt/</code> directory from the <a href="https://github.com/stefanocoretta/lmt" class="external-link">extension repo</a> and save
+the <code>lmt</code> directory with its content where pandoc can find
+it. Then you can just pass <code>lmt/lmt.lua</code> as a Lua script to
+pandoc when rendering the source file (for example if you want to use it
+with R Markdown files).</p>
+<p>You can use the Praat syntax highlighting definition to highlight the
+Praat code in the rendered file. Get the syntax definition
+<code>praat.xml</code> <a href="https://github.com/KDE/syntax-highlighting/blob/master/data/syntax/praat.xml" class="external-link">here</a>.
+(This vignette uses the tango syntax highlighting theme.)</p>
+</div>
 </div>
 <div class="section level2">
-<h2 id="plot-with-textgrid">Plot with TextGrid<a class="anchor" aria-label="anchor" href="#plot-with-textgrid"></a>
+<h2 id="use">Use<a class="anchor" aria-label="anchor" href="#use"></a>
 </h2>
-<p>You can include annotation from a TextGrid file. You can specify the
-path to the TextGrid with the <code>tg</code> argument. If
-<code>tg</code> is set to <code>NULL</code> (the default) the function
-will search for a TextGrid file with the same base name as the wav file,
-and if it finds one it will add it to the plot.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/praat_plot.html">praat_plot</a></span><span class="op">(</span><span class="st">"vowels-tg.png"</span>, <span class="va">wav</span>, end <span class="op">=</span> <span class="fl">3</span>, tg <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
+<p>Create a new <code>.qmd</code> file and add the following in the YAML
+header of the Quarto document:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filters</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> lmt</span></span></code></pre></div>
+<p>When you render the document, the Pandoc filter will be run to create
+the Praat scripts defined in the document (see the following sections to
+learn how to define scripts).</p>
 </div>
 <div class="section level2">
-<h2 id="f0-track">f0 track<a class="anchor" aria-label="anchor" href="#f0-track"></a>
+<h2 id="hello-praat">
+<code>hello.praat</code><a class="anchor" aria-label="anchor" href="#hello-praat"></a>
 </h2>
-<p>You can add a track of f0 by setting <code>f0 = TRUE</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/praat_plot.html">praat_plot</a></span><span class="op">(</span><span class="st">"vowels-tg-f0.png"</span>, <span class="va">wav</span>, end <span class="op">=</span> <span class="fl">3</span>, tg <span class="op">=</span> <span class="cn">NULL</span>, f0 <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<p>To initialise a file (in this case our first script), use a code
+block and specify the file name, like so:</p>
+<pre class="praat"><code>```{.praat file="hello.praat"}
+# hello.praat
+writeInfoLine: "Hello Praat!"
+
+&lt;&lt;&lt;append&gt;&gt;&gt;
+
+&lt;&lt;&lt;fin&gt;&gt;&gt;
+```</code></pre>
+<p>This will create a file <code>hello.praat</code> with the code in the
+code block and it will embed code from the referenced code blocks
+(i.e. <code>append</code> and <code>fin</code>).</p>
+<p>Let’s define the <code>append</code> block. We can do so with a code
+block for which we specify the <code>ref</code> name:</p>
+<pre class="praat"><code>```{.praat ref="append"}
+# append
+appendInfoLine: "Heya!"
+
+for i from 1 to 5
+    &lt;&lt;&lt;loop&gt;&gt;&gt;
+endfor
+```</code></pre>
+<p>You will see that this code block has a referenced block too!
+Referencing works recursively. The <code>loop</code> code block is
+defined below.</p>
+<pre class="praat"><code>```{.praat ref="loop"}
+# loop
+appendInfoLine: i
+```</code></pre>
 </div>
 <div class="section level2">
-<h2 id="further-customisation">Further customisation<a class="anchor" aria-label="anchor" href="#further-customisation"></a>
+<h2 id="second-praat">
+<code>second.praat</code><a class="anchor" aria-label="anchor" href="#second-praat"></a>
 </h2>
-<p>Due to the extreme flexibility of the Praat plotting facilities, it
-is not that straightforward to include all the possible parameters in a
-single function.</p>
-<p>If you would like to customise the plot further, you can run
-<code>use_praat_plot_script("plot.praat")</code> which will copy the
-Praat plotting script used in <code><a href="../reference/praat_plot.html">praat_plot()</a></code> on disk (in the
-path you specify in the function), so that you can make any changes to
-the script and then run it with <code><a href="../reference/praat_run.html">praat_run()</a></code> as you would
-with any other Praat script.</p>
+<p>Now let’s make a new script.</p>
+<pre class="praat"><code>```{.praat file="second.praat"}
+# second.praat
+x$ = "a"
+writeInfoLine: x$
+
+&lt;&lt;&lt;fin&gt;&gt;&gt;
+```</code></pre>
 </div>
 <div class="section level2">
-<h2 id="include-plots-in-rmarkdown">Include plots in Rmarkdown<a class="anchor" aria-label="anchor" href="#include-plots-in-rmarkdown"></a>
+<h2 id="fin">
+<code>fin</code><a class="anchor" aria-label="anchor" href="#fin"></a>
 </h2>
-<p>To include a plot created with <code><a href="../reference/praat_plot.html">praat_plot()</a></code> you can use
-<code>knitr::include_graphics("your-plot.png")</code>.</p>
+<p>Of course, code blocks can be reused! Also note that the order in
+which the code blocks are specified does not matter.</p>
+<pre class="praat"><code>```{.praat ref="fin"}
+# fin
+appendInfoLine: "That's all!"
+```</code></pre>
+</div>
+<div class="section level2">
+<h2 id="render">Render<a class="anchor" aria-label="anchor" href="#render"></a>
+</h2>
+<p>Now you can just render the source file (the <code>.qmd</code> file)
+to generate the defined scripts in the same directory as the source file
+and get an HTML/PDF version of the source file that can be used as
+documentation of the scripts!</p>
 </div>
   </div>
 

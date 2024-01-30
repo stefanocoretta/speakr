@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">speakr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">3.2.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">3.2.2</span>
       </span>
     </div>
 
@@ -44,6 +44,9 @@
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu"><li>
+      <a href="../articles/praat-lmt.html">Using the Literate Markdown Tangler Quarto Extension</a>
+    </li>
+    <li>
       <a href="../articles/praat-plot.html">Plot with Praat</a>
     </li>
     <li>
@@ -77,19 +80,46 @@
     </div>
 
     <div class="section level2">
+<h2 class="page-header" data-toc-text="3.2.2" id="speakr-v322">speakr v3.2.2<small>2024-01-29</small><a class="anchor" aria-label="anchor" href="#speakr-v322"></a></h2>
+<div class="section level3">
+<h3 id="added-3-2-2">Added<a class="anchor" aria-label="anchor" href="#added-3-2-2"></a></h3>
+<ul><li><p><code><a href="../reference/add_lmt.html">add_lmt()</a></code> to add the Quarto extension Literate Markdown Tangler.</p></li>
+<li><p>Add <code>praat-lmt</code> vignette that illustrates how to use the LMT to write Praat scripts.</p></li>
+</ul></div>
+<div class="section level3">
+<h3 id="changed-3-2-2">Changed<a class="anchor" aria-label="anchor" href="#changed-3-2-2"></a></h3>
+<ul><li>Vignettes now use native pipe <code>|&gt;</code>.</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="3.2.1" id="speakr-v321">speakr v3.2.1<small>2022-09-04</small><a class="anchor" aria-label="anchor" href="#speakr-v321"></a></h2>
+<div class="section level3">
+<h3 id="fixed-3-2-1">Fixed<a class="anchor" aria-label="anchor" href="#fixed-3-2-1"></a></h3>
+<ul><li>
+<code>option()</code> to <code><a href="https://rdrr.io/r/base/options.html" class="external-link">options()</a></code> in README (7fb7757). Thanks to <a href="https://github.com/agricolamz" class="external-link">@agricolamz</a> (<a href="https://github.com/stefanocoretta/speakr/issues/11" class="external-link">#11</a>).</li>
+</ul></div>
+<div class="section level3">
+<h3 id="developer-3-2-1">Developer<a class="anchor" aria-label="anchor" href="#developer-3-2-1"></a></h3>
+<ul><li>Fixed CRAN errors related to HTML5 checks.</li>
+</ul></div>
+</div>
+    <div class="section level2">
 <h2 class="page-header" data-toc-text="3.2.0" id="speakr-v320">speakr v3.2.0<small>2021-07-22</small><a class="anchor" aria-label="anchor" href="#speakr-v320"></a></h2>
 <div class="section level3">
 <h3 id="added-3-2-0">Added<a class="anchor" aria-label="anchor" href="#added-3-2-0"></a></h3>
-<ul><li>Zenodo DOI in Readme.</li></ul></div>
+<ul><li>Zenodo DOI in Readme.</li>
+</ul></div>
 <div class="section level3">
 <h3 id="fixed-3-2-0">Fixed<a class="anchor" aria-label="anchor" href="#fixed-3-2-0"></a></h3>
-<ul><li>Fixed errors in vignette after update of readr.</li></ul></div>
+<ul><li>Fixed errors in vignette after update of readr.</li>
+</ul></div>
 </div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="3.1.1" id="speakr-v311">speakr v3.1.1<small>2021-04-21</small><a class="anchor" aria-label="anchor" href="#speakr-v311"></a></h2>
 <div class="section level3">
 <h3 id="fixed-3-1-1">Fixed<a class="anchor" aria-label="anchor" href="#fixed-3-1-1"></a></h3>
-<ul><li>Fixed CRAN errors.</li></ul></div>
+<ul><li>Fixed CRAN errors.</li>
+</ul></div>
 </div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="3.1.0" id="speakr-v310">speakr v3.1.0<small>2021-04-19</small><a class="anchor" aria-label="anchor" href="#speakr-v310"></a></h2>
@@ -101,11 +131,13 @@
 </ul></div>
 <div class="section level3">
 <h3 id="fixed-3-1-0">Fixed<a class="anchor" aria-label="anchor" href="#fixed-3-1-0"></a></h3>
-<ul><li>Now the path to Praat is set on load and calls to the package namespace with <code>::</code> will work (closes <a href="https://github.com/stefanocoretta/speakr/issues/5" class="external-link">#5</a>).</li></ul></div>
+<ul><li>Now the path to Praat is set on load and calls to the package namespace with <code>::</code> will work (closes <a href="https://github.com/stefanocoretta/speakr/issues/5" class="external-link">#5</a>).</li>
+</ul></div>
 <div class="section level3">
 <h3 id="deprecated-3-1-0">Deprecated<a class="anchor" aria-label="anchor" href="#deprecated-3-1-0"></a></h3>
 <ul><li>
-<code><a href="../reference/set_praat_path.html">set_praat_path()</a></code> and <code><a href="../reference/get_praat_path.html">get_praat_path()</a></code> have been deprecated. Now the package relies on <code>options("speakr.praat.path")</code>.</li></ul></div>
+<code><a href="../reference/set_praat_path.html">set_praat_path()</a></code> and <code><a href="../reference/get_praat_path.html">get_praat_path()</a></code> have been deprecated. Now the package relies on <code>options("speakr.praat.path")</code>.</li>
+</ul></div>
 </div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="3.0.0" id="speakr-v300">speakr v3.0.0<small>2021-01-25</small><a class="anchor" aria-label="anchor" href="#speakr-v300"></a></h2>
@@ -116,12 +148,13 @@
 </ul></div>
 <div class="section level3">
 <h3 id="changed-3-0-0">Changed<a class="anchor" aria-label="anchor" href="#changed-3-0-0"></a></h3>
-<ul><li><p>Use <code>usethis::use_package_doc()</code>.</p></li>
+<ul><li><p>Use <code><a href="https://usethis.r-lib.org/reference/use_package_doc.html" class="external-link">usethis::use_package_doc()</a></code>.</p></li>
 <li><p>📝 Various updates to the documentation.</p></li>
 </ul></div>
 <div class="section level3">
 <h3 id="removed-3-0-0">Removed<a class="anchor" aria-label="anchor" href="#removed-3-0-0"></a></h3>
-<ul><li>🔥 Utilities for <code>lmt</code> have been removed. (R-based literate Praat capabilities will be reintroduced in a future release).</li></ul></div>
+<ul><li>🔥 Utilities for <code>lmt</code> have been removed. (R-based literate Praat capabilities will be reintroduced in a future release).</li>
+</ul></div>
 </div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="2.1.1" id="speakr-v211">speakr v2.1.1<a class="anchor" aria-label="anchor" href="#speakr-v211"></a></h2>
@@ -132,28 +165,33 @@
 </ul></div>
 <div class="section level3">
 <h3 id="fixed-2-1-1">Fixed<a class="anchor" aria-label="anchor" href="#fixed-2-1-1"></a></h3>
-<ul><li>warning message about <code>lmt</code> path at install time when <code>lmt</code> is not installed</li></ul></div>
+<ul><li>warning message about <code>lmt</code> path at install time when <code>lmt</code> is not installed</li>
+</ul></div>
 </div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="2.1.0" id="speakr-v210">speakr v2.1.0<a class="anchor" aria-label="anchor" href="#speakr-v210"></a></h2>
 <div class="section level3">
 <h3 id="changed-2-1-0">Changed<a class="anchor" aria-label="anchor" href="#changed-2-1-0"></a></h3>
-<ul><li>expanded documentation</li></ul></div>
+<ul><li>expanded documentation</li>
+</ul></div>
 </div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="2.0.2" id="speakr-v202">speakr v2.0.2<a class="anchor" aria-label="anchor" href="#speakr-v202"></a></h2>
 <div class="section level3">
 <h3 id="fixed-2-0-2">Fixed<a class="anchor" aria-label="anchor" href="#fixed-2-0-2"></a></h3>
-<ul><li>missing date in citation</li></ul></div>
+<ul><li>missing date in citation</li>
+</ul></div>
 </div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="2.0.1" id="speakr-v201">speakr v2.0.1<a class="anchor" aria-label="anchor" href="#speakr-v201"></a></h2>
 <div class="section level3">
 <h3 id="added-2-0-1">Added<a class="anchor" aria-label="anchor" href="#added-2-0-1"></a></h3>
-<ul><li>link to demo</li></ul></div>
+<ul><li>link to demo</li>
+</ul></div>
 <div class="section level3">
 <h3 id="changed-2-0-1">Changed<a class="anchor" aria-label="anchor" href="#changed-2-0-1"></a></h3>
-<ul><li>clarified scope and installation of the package in README.md</li></ul></div>
+<ul><li>clarified scope and installation of the package in README.md</li>
+</ul></div>
 </div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="2.0.0" id="speakr-v200">speakr v2.0.0<a class="anchor" aria-label="anchor" href="#speakr-v200"></a></h2>
@@ -170,16 +208,19 @@
 </ul></div>
 <div class="section level3">
 <h3 id="fixed-2-0-0">Fixed<a class="anchor" aria-label="anchor" href="#fixed-2-0-0"></a></h3>
-<ul><li>code style of some functions</li></ul></div>
+<ul><li>code style of some functions</li>
+</ul></div>
 <div class="section level3">
 <h3 id="removed-2-0-0">Removed<a class="anchor" aria-label="anchor" href="#removed-2-0-0"></a></h3>
-<ul><li>old functions with camelCase names</li></ul></div>
+<ul><li>old functions with camelCase names</li>
+</ul></div>
 </div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="1.0.0" id="speakr-v100">speakr v1.0.0<a class="anchor" aria-label="anchor" href="#speakr-v100"></a></h2>
 <div class="section level3">
 <h3 id="added-1-0-0">Added<a class="anchor" aria-label="anchor" href="#added-1-0-0"></a></h3>
-<ul><li>everything</li></ul></div>
+<ul><li>everything</li>
+</ul></div>
 </div>
   </div>
 
@@ -195,7 +236,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
   <p class="preferably">Using <a href="https://preferably.amirmasoudabdol.name/?source=footer" class="external-link">preferably</a> template.</p>
 </div>
 
