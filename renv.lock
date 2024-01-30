@@ -1106,6 +1106,18 @@
       "Repository": "CRAN",
       "Hash": "a555924add98c99d2f411e37e7d25e9f"
     },
+    "preferably": {
+      "Package": "preferably",
+      "Version": "0.4.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "knitr",
+        "pkgdown"
+      ],
+      "Hash": "47df1301a6c8dff0a19f493421dd93e1"
+    },
     "prettyunits": {
       "Package": "prettyunits",
       "Version": "1.2.0",
