@@ -23,26 +23,26 @@ praat_plot(
 
 \item{wav}{Wav file path as a string.}
 
-\item{tg}{TextGrid file path as a string. If `NULL` (the default), a TextGrid
+\item{tg}{TextGrid file path as a string. If \code{NULL} (the default), a TextGrid
 is plotted if a TextGrid file with the same name as the wav file is found.
 No TextGrid is plotted otherwise.}
 
 \item{start}{Start time of the plotting window in seconds.}
 
-\item{end}{End time of the plotting window in seconds. If `NULL` (the
+\item{end}{End time of the plotting window in seconds. If \code{NULL} (the
 default), plot the entire duration.}
 
 \item{width}{Width of the plot in inches.}
 
-\item{format}{Output file format (`png` by default, or `pdf`).}
+\item{format}{Output file format (\code{png} by default, or \code{pdf}).}
 
-\item{f0}{Whether to plot f0 (`FALSE` by default).}
+\item{f0}{Whether to plot f0 (\code{FALSE} by default).}
 
-\item{f0_min}{If `f0 = TRUE`, minimum f0 value (`0` by default).}
+\item{f0_min}{If \code{f0 = TRUE}, minimum f0 value (\code{0} by default).}
 
-\item{f0_max}{If `f0 = TRUE`, maximum f0 value (`500` by default).}
+\item{f0_max}{If \code{f0 = TRUE}, maximum f0 value (\code{500} by default).}
 
-\item{spec_max}{Maximum frequency for the spectrogram (`5000` by default).}
+\item{spec_max}{Maximum frequency for the spectrogram (\code{5000} by default).}
 }
 \value{
 Nothing. It is used for its side effects.
