@@ -126,6 +126,20 @@
       ],
       "Hash": "c39f4155b3ceb1a9a2799d700fbd4b6a"
     },
+    "badger": {
+      "Package": "badger",
+      "Version": "0.2.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "desc",
+        "dlstats",
+        "rvcheck",
+        "usethis"
+      ],
+      "Hash": "1646e3fbd4138f3e3e2cf2f686c73501"
+    },
     "base64enc": {
       "Package": "base64enc",
       "Version": "0.1-3",
@@ -433,6 +447,22 @@
       ],
       "Hash": "33698c4b3127fc9f506654607fb73676"
     },
+    "dlstats": {
+      "Package": "dlstats",
+      "Version": "0.1.7",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "RColorBrewer",
+        "ggplot2",
+        "jsonlite",
+        "magrittr",
+        "scales",
+        "utils"
+      ],
+      "Hash": "e9ba1c73457c25b19b94bd71eceb38ab"
+    },
     "downlit": {
       "Package": "downlit",
       "Version": "0.4.4",
@@ -701,6 +731,21 @@
         "utils"
       ],
       "Hash": "d55aa087c47a63ead0f6fc10f8fa1ee0"
+    },
+    "httr": {
+      "Package": "httr",
+      "Version": "1.4.7",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "R6",
+        "curl",
+        "jsonlite",
+        "mime",
+        "openssl"
+      ],
+      "Hash": "ac107251d9d9fd72f0ca8049988f1d7f"
     },
     "httr2": {
       "Package": "httr2",
@@ -1327,6 +1372,19 @@
       "Repository": "CRAN",
       "Hash": "5f90cd73946d706cfe26024294236113"
     },
+    "rvcheck": {
+      "Package": "rvcheck",
+      "Version": "0.2.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "BiocManager",
+        "R",
+        "utils",
+        "yulab.utils"
+      ],
+      "Hash": "fee46a3924e5522b01138accbe6ff804"
+    },
     "rversions": {
       "Package": "rversions",
       "Version": "2.1.2",
@@ -1800,6 +1858,21 @@
       "Source": "Repository",
       "Repository": "RSPM",
       "Hash": "51dab85c6c98e50a18d7551e9d49f76c"
+    },
+    "yulab.utils": {
+      "Package": "yulab.utils",
+      "Version": "0.1.8",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "cli",
+        "digest",
+        "fs",
+        "rlang",
+        "tools",
+        "utils"
+      ],
+      "Hash": "1025130715cc1db0fc7e02d46c995402"
     },
     "zip": {
       "Package": "zip",

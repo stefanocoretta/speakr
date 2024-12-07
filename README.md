@@ -9,7 +9,7 @@
 [![CRAN
 checks](https://badges.cranchecks.info/summary/speakr.svg)](https://cran.r-project.org/web/checks/check_results_speakr.html)
 [![R-CMD-check](https://github.com/stefanocoretta/speakr/workflows/R-CMD-check/badge.svg)](https://github.com/stefanocoretta/speakr/actions)
-[![](https://img.shields.io/badge/devel%20version-3.2.2-orange.svg)](https://github.com/stefanocoretta/speakr)
+[![](https://img.shields.io/badge/devel%20version-3.2.4-orange.svg)](https://github.com/stefanocoretta/speakr)
 [![](https://img.shields.io/badge/doi-10.5281/zenodo.4014768-blue.svg)](https://doi.org/10.5281/zenodo.4014768)
 [![R-CMD-check](https://github.com/stefanocoretta/speakr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/stefanocoretta/speakr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
@@ -122,7 +122,7 @@ praat_plot("vowels.png", wav, f0 = T, f0_max = 200, end = 3)
 You can include the plot in an Rmarkdown file with knitr.
 
 ``` r
-knitr::include_graphics("man/figures/vowels.png")
+knitr::include_graphics("man/figures/README-vowel-plot-1.png")
 ```
 
-<img src="man/figures/vowels.png" width="100%" />
+<img src="man/figures/README-vowel-plot-1.png" width="100%" />

@@ -113,6 +113,6 @@ praat_plot("vowels.png", wav, f0 = T, f0_max = 200, end = 3)
 You can include the plot in an Rmarkdown file with knitr.
 
 ```{r fig}
-knitr::include_graphics("man/figures/vowels.png")
+knitr::include_graphics("man/figures/README-vowel-plot-1.png")
 ```
 

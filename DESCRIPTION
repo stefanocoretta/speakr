@@ -1,11 +1,11 @@
 Package: speakr
 Type: Package
 Title: A Wrapper for the Phonetic Software 'Praat'
-Version: 3.2.3
-Date: 2024-12-06
-Authors@R: person("Stefano", "Coretta", email = "stefano.coretta@gmail.com",
+Version: 3.2.4
+Date: 2024-12-07
+Authors@R: c(person(given = "Stefano", family = "Coretta", email = paste0("stefano.coretta", "@", "gmail.com"),
                   role = c("aut", "cre"),
-                  comment = c(ORCID = "0000-0001-9627-5532", github = "stefanocoretta"))
+                  comment = c(ORCID = "0000-0001-9627-5532")))
 Description: It allows running 'Praat' scripts from R and it provides some
     wrappers for basic plotting. It also adds support for literate markdown
     tangling. The package is designed to bring reproducible phonetic research
