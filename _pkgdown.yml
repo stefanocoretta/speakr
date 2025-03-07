@@ -1,2 +1,4 @@
+url: https://stefanocoretta.github.io/speakr/
 template:
-  package: preferably
+  bootstrap: 5
+  bootswatch: flatly
