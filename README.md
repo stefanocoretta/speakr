@@ -5,13 +5,11 @@
 
 <!-- badges: start -->
 
+[![](https://img.shields.io/badge/doi-10.5281/zenodo.4014768-blue.svg)](https://doi.org/10.5281/zenodo.4014768)
 [![](https://www.r-pkg.org/badges/version/speakr?color=blue)](https://cran.r-project.org/package=speakr)
 [![CRAN
 checks](https://badges.cranchecks.info/summary/speakr.svg)](https://cran.r-project.org/web/checks/check_results_speakr.html)
-[![R-CMD-check](https://github.com/stefanocoretta/speakr/workflows/R-CMD-check/badge.svg)](https://github.com/stefanocoretta/speakr/actions)
 [![](https://img.shields.io/badge/devel%20version-3.2.4-orange.svg)](https://github.com/stefanocoretta/speakr)
-[![](https://img.shields.io/badge/doi-10.5281/zenodo.4014768-blue.svg)](https://doi.org/10.5281/zenodo.4014768)
-[![R-CMD-check](https://github.com/stefanocoretta/speakr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/stefanocoretta/speakr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 With speakr, you can run Praat scripts in R and capture their `infoLine`

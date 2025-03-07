@@ -1,7 +1,5 @@
 ---
-output:
-  github_document:
-    html_preview: false
+output: github_document
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -23,12 +21,10 @@ library(speakr)
 # speakr: A Wrapper for the Phonetic Software Praat <img src='man/figures/logo.png' style="float: right;" height="120" />
 
 <!-- badges: start -->
+`r badger::badge_doi(doi = "10.5281/zenodo.4014768", color = "blue")`
 `r badger::badge_cran_release("speakr", "blue")`
 `r badger::badge_cran_checks("speakr")`
-[![R-CMD-check](https://github.com/stefanocoretta/speakr/workflows/R-CMD-check/badge.svg)](https://github.com/stefanocoretta/speakr/actions)
 `r badger::badge_devel(color = "orange")`
-`r badger::badge_doi(doi = "10.5281/zenodo.4014768", color = "blue")`
-[![R-CMD-check](https://github.com/stefanocoretta/speakr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/stefanocoretta/speakr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 With speakr, you can run Praat scripts in R and capture their `infoLine` output.
