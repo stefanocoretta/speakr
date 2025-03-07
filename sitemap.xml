@@ -1,66 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>/articles/praat-lmt.html</loc>
-  </url>
-  <url>
-    <loc>/articles/praat-plot.html</loc>
-  </url>
-  <url>
-    <loc>/articles/run-praat.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/news/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/add_lmt.html</loc>
-  </url>
-  <url>
-    <loc>/reference/get_praat_path.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/praat_open.html</loc>
-  </url>
-  <url>
-    <loc>/reference/praat_path.html</loc>
-  </url>
-  <url>
-    <loc>/reference/praat_plot.html</loc>
-  </url>
-  <url>
-    <loc>/reference/praat_run.html</loc>
-  </url>
-  <url>
-    <loc>/reference/set_praat_path.html</loc>
-  </url>
-  <url>
-    <loc>/reference/speakr-package.html</loc>
-  </url>
-  <url>
-    <loc>/reference/start_praat.html</loc>
-  </url>
-  <url>
-    <loc>/reference/use_praat_plot_script.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://stefanocoretta.github.io/speakr/404.html</loc></url>
+<url><loc>https://stefanocoretta.github.io/speakr/LICENSE-text.html</loc></url>
+<url><loc>https://stefanocoretta.github.io/speakr/LICENSE.html</loc></url>
+<url><loc>https://stefanocoretta.github.io/speakr/articles/index.html</loc></url>
+<url><loc>https://stefanocoretta.github.io/speakr/articles/praat-lmt.html</loc></url>
+<url><loc>https://stefanocoretta.github.io/speakr/articles/praat-plot.html</loc></url>
+<url><loc>https://stefanocoretta.github.io/speakr/articles/run-praat.html</loc></url>
+<url><loc>https://stefanocoretta.github.io/speakr/authors.html</loc></url>
+<url><loc>https://stefanocoretta.github.io/speakr/index.html</loc></url>
+<url><loc>https://stefanocoretta.github.io/speakr/news/index.html</loc></url>
+<url><loc>https://stefanocoretta.github.io/speakr/reference/add_lmt.html</loc></url>
+<url><loc>https://stefanocoretta.github.io/speakr/reference/get_praat_path.html</loc></url>
+<url><loc>https://stefanocoretta.github.io/speakr/reference/index.html</loc></url>
+<url><loc>https://stefanocoretta.github.io/speakr/reference/praat_open.html</loc></url>
+<url><loc>https://stefanocoretta.github.io/speakr/reference/praat_path.html</loc></url>
+<url><loc>https://stefanocoretta.github.io/speakr/reference/praat_plot.html</loc></url>
+<url><loc>https://stefanocoretta.github.io/speakr/reference/praat_run.html</loc></url>
+<url><loc>https://stefanocoretta.github.io/speakr/reference/set_praat_path.html</loc></url>
+<url><loc>https://stefanocoretta.github.io/speakr/reference/speakr-package.html</loc></url>
+<url><loc>https://stefanocoretta.github.io/speakr/reference/start_praat.html</loc></url>
+<url><loc>https://stefanocoretta.github.io/speakr/reference/use_praat_plot_script.html</loc></url>
 </urlset>
+

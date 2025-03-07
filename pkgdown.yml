@@ -1,9 +1,11 @@
-pandoc: 2.19.2
-pkgdown: 2.0.7
+pandoc: 3.1.11
+pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
   praat-lmt: praat-lmt.html
   praat-plot: praat-plot.html
   run-praat: run-praat.html
-last_built: 2024-01-30T09:20Z
-
+last_built: 2025-03-07T11:14Z
+urls:
+  reference: https://stefanocoretta.github.io/speakr/reference
+  article: https://stefanocoretta.github.io/speakr/articles
