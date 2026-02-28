@@ -62,3 +62,7 @@ If you would like to customise the plot further, you can run `use_praat_plot_scr
 ## Include plots in Rmarkdown
 
 To include a plot created with `praat_plot()` you can use `knitr::include_graphics("your-plot.png")`.
+
+## Inlcude plots in Quarto
+
+Just use the Quarto image syntax: `![](your-plot.png)`

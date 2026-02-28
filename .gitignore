@@ -5,3 +5,7 @@
 inst/doc
 *.DS_Store
 docs
+
+vignettes/vowels-tg-f0.png
+vignettes/vowels-tg.png
+vignettes/vowels.png

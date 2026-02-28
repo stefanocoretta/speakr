@@ -21,8 +21,8 @@ theme_set(theme_dark())
 library(speakr)
 ```
 
-The package speakr allows the user to run a Praat script from within R, optionally passing parameters to the script if a form is used.
-In combination with rmarkdown::render(), it is possible to generate dynamic reports which include phonetic analyses.
+The package speakr allows the user to run a Praat script from within R, optionally passing parameters to the script if a Praat [form](https://www.fon.hum.uva.nl/praat/manual/Scripting_6_1__Arguments_to_the_script.html) is used.
+In combination with RMarkdown or Quarto, it is possible to generate dynamic reports which include phonetic analyses.
 
 Load the package with:
 
@@ -42,6 +42,8 @@ script <- system.file("extdata", "play-greetings.praat", package = "speakr")
 
 praat_run(script)
 ```
+
+You should hear a synthesised sentence after running the code.
 
 If the script has side effects, like creating new files or editing existing ones, these effects will take place.
 
@@ -89,11 +91,11 @@ cat(formants)
 cat(formants)
 ```
 
-Of course, you can redirect the captured output using the pipe `|>`, for example to read the output as a tibble.
+Of course, you can redirect the captured output using the pipe `|>`, for example to read the output as a tibble. Note that readr requires raw input to be wrapped with `I()`, so we wrap the `praat_run()` function in it.
 
 ```{r run-capt-tbl, eval=FALSE}
 # Output to R tibble
-formants <- praat_run(script, capture = TRUE) |>
+formants <- I(praat_run(script, capture = TRUE)) |>
   read_csv()
 class(formants)
 glimpse(formants)
@@ -120,7 +122,7 @@ script <- system.file("extdata", "get-formants-args.praat", package = "speakr")
 unit = "Bark"
 window = 0.02
 
-f_bark <- praat_run(script, unit, window, capture = TRUE) |>
+f_bark <- I(praat_run(script, unit, window, capture = TRUE)) |>
   read_csv()
 attr(f_bark, "args") <- list(unit = unit, window = window)
 ```

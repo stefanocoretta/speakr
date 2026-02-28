@@ -1,3 +1,8 @@
+# spekr v3.2.4.9000
+
+- Minor updates to vignettes.
+
+
 # speakr v3.2.4
 
 - Fixed Authors.
